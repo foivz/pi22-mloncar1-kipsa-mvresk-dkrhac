@@ -11,7 +11,7 @@ Sav programski kod potrebno je verzionirati u glavnoj **master** grani i **obvez
 
 Nakon vaše prijave bit će vam dodijeljen mentor s kojim ćete tijekom semestra raditi na ovom projektu. A sada, vrijeme je da prijavite vaš projekt. Za prijavu vašeg projektnog prijedloga molimo vas koristite **predložak** koji je naveden u nastavku, a započnite tako da kliknete na *olovku* u desnom gornjem kutu ovoga dokumenta :) 
 
-# Desktop app za kasu u birtiji(gostionici)
+# Desktop app za  birtiji(gostionici)
 
 ## Projektni tim
 
@@ -20,17 +20,25 @@ Ime i prezime | E-mail adresa (FOI) | JMBAG | Github korisničko ime
 Ime i prezime | mvresk@foi.hr | 0016141883 | mvresk
 Ime i prezime |mloncar1@foi.hr| 0016138129| Maicco12
 Ime i prezime |kipsa@foi.hr| 0016145835| Bajastera
+Ime i prezime |dkrhac@foi.hr| 0016139009| krhacd
 
 ## Opis domene
-Naš projekt bavit će se izradom aplikacije koju će imati funkcionalnost kase za birtiju.Odnosno prikazivati će sve transakcije i korisnike koji su obavili te transakcije.
-
+Naš projekt bavit će se izradom aplikacije koju će pokrivati sve osnovne funkcionalnosti koje treba imati aplikacija za gostionicu.Nabava i plaćanje pića,prijedlozi korisnika,obavijesti,pregled ponude , narudžbe pića...
 ## Specifikacija projekta
-Umjesto ovih uputa opišite zahtjeve za funkcionalnošću programskog proizvoda. Pobrojite osnovne funkcionalnosti i za svaku naznačite ime odgovornog člana tima. Opišite buduću arhitekturu programskog proizvoda. Obratite pozornost da bi arhitektura trebala biti višeslojna s odvojenom (dislociranom) bazom podatka. Također uzmite u obzir da bi svaki član tima treba biti odgovorana za otprilike 3 funkcionalnosti, te da bi opterećenje članova tima trebalo biti ujednačeno. Priložite odgovarajuće dijagrame i skice gdje je to prikladno. Funkcionalnosti sustava bobrojite u tablici ispod koristeći predložak koji slijedi:
+
 
 Oznaka | Naziv | Kratki opis | Odgovorni član tima
 ------ | ----- | ----------- | -------------------
-F01 | Login | Za pristup dnevniku potrebnba je autentikacija korisnika pomoću login funkcionalnosti. Korisnik se logira s podacima koji su mu dodijeljeni prilikom ... | Zlatko Stapić
-F02 | Pregled dnevnika | .... | ...
-
+F01 | Login i registracija | Za pristup aplikaciji potrebnba je autentikacija korisnika pomoću login funkcionalnosti. Da bi se korisnik mogao logirati mora se registirati.Njegovi podaci se spremaju u bazu podataka | Marko Vresk
+F02 | Cjenik-pregled pića u ponudi |Prikaz svih pića u ponudi,njihova cijena i kratak opis s mogučnošću dodavanja novih pića ili izmjenom postojećih| Marko Vresk
+F03 | Narudžbe |Prikaz svih narudžbi zaprimljenih od korisnika koje kafić mora obraditi.| Karlo Ipša
+F04 | Nabava pića  |Mogućnost nabave pića od dobavljača s svim informacijama o tome .| Karlo Ipša
+F05 | Raspored rada |Mogućnost sastavljanja plana rada s informacijama o satnicama zaposlenika.| Marko Lončar
+F06 | Recenzije i prijedlozi |Obavijesti i prijedlozi koje bi aplikacija primala od ljudi.| Marko Lončar
+F07 | Obavijesti |Obavijesti i komunikacija između zaposlenika gostionice| David Krhač
+F08 | Odjava i Postavke |Odjava s aplikacije i podešavanje postavki(odabir pozadine , fonta i veličine slova)| David Krhač
 ## Tehnologije i oprema
-Umjesto ovih uputa jasno popišite sve tehnologije, alate i opremu koju ćete koristiti pri implementaciji vašeg rješenja. Ne zaboravite planirati korištenje tehnologija u aktivnostima kao što su projektni menadžment ili priprema dokumentacije. Tehnologije koje ćete koristiti bi trebale biti javno dostupne, a ako ih ne budemo obrađivali na vježbama u vašoj dokumentaciji ćete morati navesti način preuzimanja, instaliranja i korištenja onih tehnologija koje su neopbodne kako bi se vaš programski proizvod preveo i pokrenuo. Pazite da svi alati koje ćete koristiti moraju imati odgovarajuću licencu.
+Microsoft Visual Studio za izradu same aplikacije i povezivanje s bazom podataka.
+MySQL Workbench - za izradu potrebnih baza podataka
+Draw.io -za izradu potrebnih dijagrama
+Microsoft Word - za pisanje dokumentacije
