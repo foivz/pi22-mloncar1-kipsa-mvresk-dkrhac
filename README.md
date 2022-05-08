@@ -29,14 +29,15 @@ Naš projekt bavit će se izradom aplikacije koju će pokrivati sve osnovne funk
 
 Oznaka | Naziv | Kratki opis | Odgovorni član tima
 ------ | ----- | ----------- | -------------------
-F01 | Login i registracija | Za pristup aplikaciji potrebnba je autentikacija korisnika pomoću login funkcionalnosti. Da bi se korisnik mogao logirati mora se registirati.Njegovi podaci se spremaju u bazu podataka | Marko Vresk
-F02 | Cjenik-pregled pića u ponudi |Prikaz svih pića u ponudi,njihova cijena i kratak opis s mogučnošću dodavanja novih pića ili izmjenom postojećih| Marko Vresk
-F03 | Narudžbe |Prikaz svih narudžbi zaprimljenih od korisnika koje kafić mora obraditi.| Karlo Ipša
-F04 | Nabava pića  |Mogućnost nabave pića od dobavljača s svim informacijama o tome .| Karlo Ipša
-F05 | Raspored rada |Mogućnost sastavljanja plana rada s informacijama o satnicama zaposlenika.| Marko Lončar
-F06 | Recenzije i prijedlozi |Obavijesti i prijedlozi koje bi aplikacija primala od ljudi.| Marko Lončar
-F07 | Obavijesti |Obavijesti i komunikacija između zaposlenika gostionice| David Krhač
-F08 | Odjava i Postavke |Odjava s aplikacije i podešavanje postavki(odabir pozadine , fonta i veličine slova)| David Krhač
+F01 | Registracija| Za pristup aplikaciji potrebnba je autentikacija korisnika .Da bi se mogao prijaviti prvo mora izraditi korisnički račun . Registracija je nužna kako bi mogao pristupiti aplikaciji. | Marko Vresk
+F02 | Login  | Nakon što se registrira korisnik se prijavljuje u aplikaciju korištenjem korisničkog imena i lozinke koju je definirao kod registracije. | Marko Vresk
+F03 | Cjenik-pregled pića u ponudi |forma u kojoj imamo pregled svih pića u ponudi i nekih osnovnih informacija o tom piću , mogućnost ažuriranja cijena i opisa proizvoda. Zatim možemo pregledati narudžbe za određeni proizvod od strane kupaca i dobavljača. Neke od tih funkcionalnosti će biti ograničene ovisno o ulozi kojom se prijavimo. | Marko Vresk
+F04 | Narudžbe |Prikaz svih narudžbi zaprimljenih od korisnika i prikaz svih narudžbi od dobavljača koje kafić mora obraditi. | David Krhač
+F05 | Obavijesti Obavijesti i komunikacija između zaposlenika gostionice| David Krhač
+F06 | Recenzije i prijedlozi |Obavijesti i prijedlozi koje bi aplikacija primala od ljudi.| David Krhač
+F07 | Raspored rada |Obavijesti i mogućnost kreiranja rasporeda rada.| Karlo Ipša
+F08 | Statistika |Prikaz količine prodanih proizvoda .| Karlo Ipša
+F09 | Odjava i Postavke |Odjava s aplikacije i podešavanje postavki(odabir pozadine , fonta i veličine slova)| Karlo Ipša
 ## Tehnologije i oprema
 Microsoft Visual Studio za izradu same aplikacije i povezivanje s bazom podataka.
 MySQL Workbench - za izradu potrebnih baza podataka
