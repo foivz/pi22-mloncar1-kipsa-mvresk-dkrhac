@@ -29,7 +29,7 @@ Naš projekt bavit će se izradom aplikacije koju će pokrivati sve osnovne funk
 
 Oznaka | Naziv | Kratki opis | Odgovorni član tima
 ------ | ----- | ----------- | -------------------
-F01 | Registracija| Za pristup aplikaciji potrebnba je autentikacija korisnika .Da bi se mogao prijaviti prvo mora izraditi korisnički račun . Registracija je nužna kako bi mogao pristupiti aplikaciji. | Marko Vresk
+F01 | Registracija| Za pristup aplikaciji potrebna je autentifikacija korisnika .Da bi se mogao prijaviti prvo mora izraditi korisnički račun . Registracija je nužna kako bi mogao pristupiti aplikaciji. | Marko Vresk
 F02 | Login  | Nakon što se registrira korisnik se prijavljuje u aplikaciju korištenjem korisničkog imena i lozinke koju je definirao kod registracije. | Marko Vresk
 F03 | Cjenik-pregled pića u ponudi |forma u kojoj imamo pregled svih pića u ponudi i nekih osnovnih informacija o tom piću , mogućnost ažuriranja cijena i opisa proizvoda. Zatim možemo pregledati narudžbe za određeni proizvod od strane kupaca i dobavljača. Neke od tih funkcionalnosti će biti ograničene ovisno o ulozi kojom se prijavimo. | Marko Vresk
 F04 | Pregled Narudžbi |Prikaz svih narudžbi zaprimljenih od korisnika i prikaz svih narudžbi od dobavljača koje kafić mora obraditi i koje su već obrađene. | David Krhač
