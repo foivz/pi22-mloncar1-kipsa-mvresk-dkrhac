@@ -32,12 +32,12 @@ Oznaka | Naziv | Kratki opis | Odgovorni član tima
 F01 | Registracija| Za pristup aplikaciji potrebnba je autentikacija korisnika .Da bi se mogao prijaviti prvo mora izraditi korisnički račun . Registracija je nužna kako bi mogao pristupiti aplikaciji. | Marko Vresk
 F02 | Login  | Nakon što se registrira korisnik se prijavljuje u aplikaciju korištenjem korisničkog imena i lozinke koju je definirao kod registracije. | Marko Vresk
 F03 | Cjenik-pregled pića u ponudi |forma u kojoj imamo pregled svih pića u ponudi i nekih osnovnih informacija o tom piću , mogućnost ažuriranja cijena i opisa proizvoda. Zatim možemo pregledati narudžbe za određeni proizvod od strane kupaca i dobavljača. Neke od tih funkcionalnosti će biti ograničene ovisno o ulozi kojom se prijavimo. | Marko Vresk
-F04 | Narudžbe |Prikaz svih narudžbi zaprimljenih od korisnika i prikaz svih narudžbi od dobavljača koje kafić mora obraditi. | David Krhač
-F05 | Obavijesti | Prikaz i mogućnost kreiranja obavijesti| David Krhač
-F06 | Recenzije i prijedlozi |Obavijesti i prijedlozi koje bi aplikacija primala od ljudi.| David Krhač
-F07 | Raspored rada |Obavijesti i mogućnost kreiranja rasporeda rada.| Karlo Ipša
-F08 | Statistika |Prikaz količine prodanih proizvoda .| Karlo Ipša
-F09 | Odjava i Postavke |Odjava s aplikacije i podešavanje postavki(odabir pozadine , fonta i veličine slova)| Karlo Ipša
+F04 | Pregled Narudžbi |Prikaz svih narudžbi zaprimljenih od korisnika i prikaz svih narudžbi od dobavljača koje kafić mora obraditi i koje su već obrađene. | David Krhač
+F05 | Dobavljači | Prikaz i mogućnost pretraživanja dobavljača po različitim kriterijjima.| David Krhač
+F06 | Recenzije i prijedlozi |Obavijesti i prijedlozi koje bi aplikacija primala od ljudi.| David Krha
+F07 | Mogućnost naručivanja (Naruči) |Korisniku se omogućuje naručivanje pića , pri tome korisnik mora odabrati količinu i koje piće želi.| Karlo Ipša
+F08 | Statistika |Prikaz količine prodanih proizvoda u nekom razdoblju .| Karlo Ipša
+F09 | Raspored rada |Obavijesti i mogućnost kreiranja rasporeda rada.| Karlo Ipša
 ## Tehnologije i oprema
 Microsoft Visual Studio za izradu same aplikacije i povezivanje s bazom podataka.
 MySQL Workbench - za izradu potrebnih baza podataka
