@@ -104,5 +104,32 @@
   <ItemGroup>
     <None Include="Resources\lozinka.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\E-mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\E-mail2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobitel ikona.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Adresa ikona.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Spol ikona.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prikaži Lozinku Ikona.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sakrij Lozinku ikona.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sakrij Lozinku.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sakrij lozinku2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

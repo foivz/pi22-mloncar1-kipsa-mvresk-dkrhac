@@ -63,6 +63,36 @@ namespace Registracija_i_Prijava.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Adresa_ikona {
+            get {
+                object obj = ResourceManager.GetObject("Adresa ikona", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap E_mail {
+            get {
+                object obj = ResourceManager.GetObject("E-mail", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap E_mail2 {
+            get {
+                object obj = ResourceManager.GetObject("E-mail2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ikona {
             get {
                 object obj = ResourceManager.GetObject("ikona", resourceCulture);
@@ -96,6 +126,66 @@ namespace Registracija_i_Prijava.Properties {
         internal static System.Drawing.Bitmap lozinka {
             get {
                 object obj = ResourceManager.GetObject("lozinka", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Mobitel_ikona {
+            get {
+                object obj = ResourceManager.GetObject("Mobitel ikona", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Prikaži_Lozinku_Ikona {
+            get {
+                object obj = ResourceManager.GetObject("Prikaži Lozinku Ikona", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sakrij_Lozinku {
+            get {
+                object obj = ResourceManager.GetObject("Sakrij Lozinku", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sakrij_Lozinku_ikona {
+            get {
+                object obj = ResourceManager.GetObject("Sakrij Lozinku ikona", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sakrij_lozinku2 {
+            get {
+                object obj = ResourceManager.GetObject("Sakrij lozinku2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Spol_ikona {
+            get {
+                object obj = ResourceManager.GetObject("Spol ikona", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
