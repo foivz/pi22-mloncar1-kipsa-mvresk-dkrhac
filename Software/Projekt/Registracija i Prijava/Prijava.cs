@@ -58,8 +58,12 @@ namespace Registracija_i_Prijava
 
         private void labelRegistrirajSe_Click(object sender, EventArgs e)
         {
+            
             Registracija registracija = new Registracija();
+            Hide();
             registracija.ShowDialog();
+            
+
         }
 
         private void textBoxKorisničkoIme_Click(object sender, EventArgs e)

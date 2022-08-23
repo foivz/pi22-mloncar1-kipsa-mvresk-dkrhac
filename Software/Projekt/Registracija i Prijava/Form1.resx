@@ -117,45 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="vik" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\vik.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ikona" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ikona.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Spol ikona" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Spol ikona.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Sakrij Lozinku ikona" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sakrij Lozinku ikona.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ikona3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ikona3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="E-mail" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\E-mail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Mobitel ikona" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Mobitel ikona.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="E-mail2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\E-mail2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-
-  <data name="Sakrij Lozinku" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sakrij Lozinku.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Adresa ikona" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Adresa ikona.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Prikaži Lozinku Ikona" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Prikaži Lozinku Ikona.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="lozinka" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lozinka.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Sakrij lozinku2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sakrij lozinku2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>
