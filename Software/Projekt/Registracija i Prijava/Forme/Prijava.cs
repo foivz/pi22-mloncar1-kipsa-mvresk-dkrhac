@@ -104,5 +104,13 @@ namespace Registracija_i_Prijava
                 textBoxLozinka.PasswordChar = '*';
             }
         }
+
+        private void buttonPrijaviSe_Click(object sender, EventArgs e)
+        {
+            Forme.PočetnaStranica početna = new Forme.PočetnaStranica();
+            Hide();
+            početna.ShowDialog();
+            Close();
+        }
     }
 }

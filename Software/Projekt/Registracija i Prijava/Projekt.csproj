@@ -46,30 +46,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Forme\PočetnaStranica.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forme\PočetnaStranica.Designer.cs">
+      <DependentUpon>PočetnaStranica.cs</DependentUpon>
     </Compile>
-    <Compile Include="Prijava.cs">
+    <Compile Include="Forme\Pregled pića .cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Prijava.Designer.cs">
+    <Compile Include="Forme\Pregled pića .Designer.cs">
+      <DependentUpon>Pregled pića .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\Prijava.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\Prijava.Designer.cs">
       <DependentUpon>Prijava.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Registracija.cs">
+    <Compile Include="Forme\Registracija.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Registracija.Designer.cs">
+    <Compile Include="Forme\Registracija.Designer.cs">
       <DependentUpon>Registracija.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Forme\PočetnaStranica.resx">
+      <DependentUpon>PočetnaStranica.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Prijava.resx">
+    <EmbeddedResource Include="Forme\Pregled pića .resx">
+      <DependentUpon>Pregled pića .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\Prijava.resx">
       <DependentUpon>Prijava.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -82,7 +91,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Registracija.resx">
+    <EmbeddedResource Include="Forme\Registracija.resx">
       <DependentUpon>Registracija.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -136,6 +145,108 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Sakrij lozinku2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vik1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logouticon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout-xxl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ikona1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Recenzije1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Recenzje2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Statistika1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RasporedRada1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RasporedRada2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RasporedRada4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RaporedRada5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RasporedRada6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RasporedRada7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PregledPića1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PregledPića2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PregledPića4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PregledPića5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PregledPića6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PregledPića8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Naruči1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Naruči2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Naruči3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Naruči4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Naruči5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Naruči6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Naruči7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Naruči8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Naruči9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dobavljači2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Narudžbe1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

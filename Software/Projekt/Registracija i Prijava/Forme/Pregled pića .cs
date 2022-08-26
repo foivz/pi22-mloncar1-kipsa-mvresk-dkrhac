@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Registracija_i_Prijava
+namespace Registracija_i_Prijava.Forme
 {
-    public partial class Form1 : Form
+    public partial class Pregled_pića : Form
     {
-        public Form1()
+        public Pregled_pića()
         {
             InitializeComponent();
         }

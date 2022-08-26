@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Registracija i Prijava", "Registracija i Prijava\Registracija i Prijava.csproj", "{E128F786-5B9A-417D-9A80-A5BF229E5CFB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projekt", "Registracija i Prijava\Projekt.csproj", "{E128F786-5B9A-417D-9A80-A5BF229E5CFB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

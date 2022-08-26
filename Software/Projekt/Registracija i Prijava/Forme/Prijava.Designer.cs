@@ -98,6 +98,7 @@
             this.buttonPrijaviSe.TabIndex = 9;
             this.buttonPrijaviSe.Text = " Prijavi se";
             this.buttonPrijaviSe.UseVisualStyleBackColor = false;
+            this.buttonPrijaviSe.Click += new System.EventHandler(this.buttonPrijaviSe_Click);
             this.buttonPrijaviSe.MouseLeave += new System.EventHandler(this.buttonPrijaviSe_MouseLeave);
             this.buttonPrijaviSe.MouseHover += new System.EventHandler(this.buttonPrijaviSe_MouseHover);
             // 
