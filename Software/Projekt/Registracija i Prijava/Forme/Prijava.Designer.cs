@@ -88,7 +88,7 @@
             // 
             // buttonPrijaviSe
             // 
-            this.buttonPrijaviSe.BackColor = System.Drawing.Color.DarkGray;
+            this.buttonPrijaviSe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             this.buttonPrijaviSe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonPrijaviSe.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonPrijaviSe.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));

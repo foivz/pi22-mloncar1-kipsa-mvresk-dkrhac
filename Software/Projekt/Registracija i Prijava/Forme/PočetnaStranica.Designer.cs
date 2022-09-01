@@ -29,31 +29,32 @@
         private void InitializeComponent()
         {
             this.panelDrag = new System.Windows.Forms.Panel();
-            this.labelPočetnaStranica = new System.Windows.Forms.Label();
-            this.textBoxOdjava = new System.Windows.Forms.TextBox();
-            this.textBoxRecenzije = new System.Windows.Forms.TextBox();
-            this.textBoxStatistika = new System.Windows.Forms.TextBox();
-            this.textBoxRasporedRada = new System.Windows.Forms.TextBox();
-            this.textBoxPregledPića = new System.Windows.Forms.TextBox();
-            this.textBoxNaručiPiće = new System.Windows.Forms.TextBox();
-            this.textBoxPregledDobavljača = new System.Windows.Forms.TextBox();
             this.textBoxPregledNarudžbi = new System.Windows.Forms.TextBox();
             this.pictureBoxNaručiPiće = new System.Windows.Forms.PictureBox();
+            this.textBoxPregledDobavljača = new System.Windows.Forms.TextBox();
             this.pictureBoxPregledDobavljača = new System.Windows.Forms.PictureBox();
+            this.textBoxNaručiPiće = new System.Windows.Forms.TextBox();
             this.pictureBoxPregledNarudžbi = new System.Windows.Forms.PictureBox();
+            this.textBoxPregledPića = new System.Windows.Forms.TextBox();
             this.pictureBoxPregledPića = new System.Windows.Forms.PictureBox();
+            this.textBoxRasporedRada = new System.Windows.Forms.TextBox();
             this.pictureBoxRasporedRada = new System.Windows.Forms.PictureBox();
+            this.textBoxStatistika = new System.Windows.Forms.TextBox();
             this.pictureBoxStatistika = new System.Windows.Forms.PictureBox();
+            this.textBoxRecenzije = new System.Windows.Forms.TextBox();
             this.pictureBoxRecenzije = new System.Windows.Forms.PictureBox();
             this.pictureBoxPregledNarudžbiGlavna = new System.Windows.Forms.PictureBox();
             this.pictureBoxPregledDobavljačaGlavna = new System.Windows.Forms.PictureBox();
             this.pictureBoxNaručiPićeGlavna = new System.Windows.Forms.PictureBox();
             this.pictureBoxPregledPićaGlavna = new System.Windows.Forms.PictureBox();
+            this.textBoxOdjava = new System.Windows.Forms.TextBox();
             this.pictureBoxOdjava = new System.Windows.Forms.PictureBox();
             this.pictureBoxOdjavaGlavna = new System.Windows.Forms.PictureBox();
             this.pictureBoxRecenzijeGlavna = new System.Windows.Forms.PictureBox();
             this.pictureBoxGlavna = new System.Windows.Forms.PictureBox();
             this.pictureBoxRasporedRadaGlavna = new System.Windows.Forms.PictureBox();
+            this.labelPočetnaStranica = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelDrag.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNaručiPiće)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPregledDobavljača)).BeginInit();
@@ -75,6 +76,7 @@
             // 
             // panelDrag
             // 
+            this.panelDrag.Controls.Add(this.label1);
             this.panelDrag.Controls.Add(this.textBoxPregledNarudžbi);
             this.panelDrag.Controls.Add(this.pictureBoxNaručiPiće);
             this.panelDrag.Controls.Add(this.textBoxPregledDobavljača);
@@ -102,127 +104,11 @@
             this.panelDrag.Controls.Add(this.labelPočetnaStranica);
             this.panelDrag.Location = new System.Drawing.Point(-2, -1);
             this.panelDrag.Name = "panelDrag";
-            this.panelDrag.Size = new System.Drawing.Size(1555, 1099);
+            this.panelDrag.Size = new System.Drawing.Size(1555, 1078);
             this.panelDrag.TabIndex = 0;
             this.panelDrag.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelDrag_MouseDown);
             this.panelDrag.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelDrag_MouseMove);
             this.panelDrag.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelDrag_MouseUp);
-            // 
-            // labelPočetnaStranica
-            // 
-            this.labelPočetnaStranica.AutoSize = true;
-            this.labelPočetnaStranica.Font = new System.Drawing.Font("Bauhaus 93", 40.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPočetnaStranica.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelPočetnaStranica.Location = new System.Drawing.Point(454, 32);
-            this.labelPočetnaStranica.Name = "labelPočetnaStranica";
-            this.labelPočetnaStranica.Size = new System.Drawing.Size(549, 76);
-            this.labelPočetnaStranica.TabIndex = 5;
-            this.labelPočetnaStranica.Text = "Početna Stranica";
-            // 
-            // textBoxOdjava
-            // 
-            this.textBoxOdjava.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            this.textBoxOdjava.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxOdjava.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.textBoxOdjava.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxOdjava.ForeColor = System.Drawing.Color.Black;
-            this.textBoxOdjava.Location = new System.Drawing.Point(1279, 725);
-            this.textBoxOdjava.Multiline = true;
-            this.textBoxOdjava.Name = "textBoxOdjava";
-            this.textBoxOdjava.Size = new System.Drawing.Size(149, 34);
-            this.textBoxOdjava.TabIndex = 11;
-            this.textBoxOdjava.Text = "Odjava";
-            this.textBoxOdjava.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBoxRecenzije
-            // 
-            this.textBoxRecenzije.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            this.textBoxRecenzije.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxRecenzije.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.textBoxRecenzije.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxRecenzije.ForeColor = System.Drawing.Color.Black;
-            this.textBoxRecenzije.Location = new System.Drawing.Point(854, 735);
-            this.textBoxRecenzije.Multiline = true;
-            this.textBoxRecenzije.Name = "textBoxRecenzije";
-            this.textBoxRecenzije.Size = new System.Drawing.Size(149, 34);
-            this.textBoxRecenzije.TabIndex = 17;
-            this.textBoxRecenzije.Text = "Recenzije";
-            this.textBoxRecenzije.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBoxStatistika
-            // 
-            this.textBoxStatistika.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            this.textBoxStatistika.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxStatistika.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.textBoxStatistika.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxStatistika.ForeColor = System.Drawing.Color.Black;
-            this.textBoxStatistika.Location = new System.Drawing.Point(467, 735);
-            this.textBoxStatistika.Multiline = true;
-            this.textBoxStatistika.Name = "textBoxStatistika";
-            this.textBoxStatistika.Size = new System.Drawing.Size(149, 34);
-            this.textBoxStatistika.TabIndex = 19;
-            this.textBoxStatistika.Text = "Statistika";
-            this.textBoxStatistika.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBoxRasporedRada
-            // 
-            this.textBoxRasporedRada.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            this.textBoxRasporedRada.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxRasporedRada.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.textBoxRasporedRada.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxRasporedRada.ForeColor = System.Drawing.Color.Black;
-            this.textBoxRasporedRada.Location = new System.Drawing.Point(24, 735);
-            this.textBoxRasporedRada.Multiline = true;
-            this.textBoxRasporedRada.Name = "textBoxRasporedRada";
-            this.textBoxRasporedRada.Size = new System.Drawing.Size(232, 34);
-            this.textBoxRasporedRada.TabIndex = 21;
-            this.textBoxRasporedRada.Text = "Raspored rada";
-            this.textBoxRasporedRada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBoxPregledPića
-            // 
-            this.textBoxPregledPića.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            this.textBoxPregledPića.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxPregledPića.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.textBoxPregledPića.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxPregledPića.ForeColor = System.Drawing.Color.Black;
-            this.textBoxPregledPića.Location = new System.Drawing.Point(57, 390);
-            this.textBoxPregledPića.Multiline = true;
-            this.textBoxPregledPića.Name = "textBoxPregledPića";
-            this.textBoxPregledPića.Size = new System.Drawing.Size(175, 34);
-            this.textBoxPregledPića.TabIndex = 23;
-            this.textBoxPregledPića.Text = "Pregled pića";
-            this.textBoxPregledPića.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBoxNaručiPiće
-            // 
-            this.textBoxNaručiPiće.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            this.textBoxNaručiPiće.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxNaručiPiće.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.textBoxNaručiPiće.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxNaručiPiće.ForeColor = System.Drawing.Color.Black;
-            this.textBoxNaručiPiće.Location = new System.Drawing.Point(447, 390);
-            this.textBoxNaručiPiće.Multiline = true;
-            this.textBoxNaručiPiće.Name = "textBoxNaručiPiće";
-            this.textBoxNaručiPiće.Size = new System.Drawing.Size(175, 34);
-            this.textBoxNaručiPiće.TabIndex = 25;
-            this.textBoxNaručiPiće.Text = "Naruči piće";
-            this.textBoxNaručiPiće.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBoxPregledDobavljača
-            // 
-            this.textBoxPregledDobavljača.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            this.textBoxPregledDobavljača.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxPregledDobavljača.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.textBoxPregledDobavljača.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxPregledDobavljača.ForeColor = System.Drawing.Color.Black;
-            this.textBoxPregledDobavljača.Location = new System.Drawing.Point(816, 390);
-            this.textBoxPregledDobavljača.Multiline = true;
-            this.textBoxPregledDobavljača.Name = "textBoxPregledDobavljača";
-            this.textBoxPregledDobavljača.Size = new System.Drawing.Size(230, 34);
-            this.textBoxPregledDobavljača.TabIndex = 27;
-            this.textBoxPregledDobavljača.Text = "Pregled dobavljača";
-            this.textBoxPregledDobavljača.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBoxPregledNarudžbi
             // 
@@ -251,6 +137,21 @@
             this.pictureBoxNaručiPiće.TabIndex = 28;
             this.pictureBoxNaručiPiće.TabStop = false;
             // 
+            // textBoxPregledDobavljača
+            // 
+            this.textBoxPregledDobavljača.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.textBoxPregledDobavljača.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxPregledDobavljača.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.textBoxPregledDobavljača.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxPregledDobavljača.ForeColor = System.Drawing.Color.Black;
+            this.textBoxPregledDobavljača.Location = new System.Drawing.Point(816, 390);
+            this.textBoxPregledDobavljača.Multiline = true;
+            this.textBoxPregledDobavljača.Name = "textBoxPregledDobavljača";
+            this.textBoxPregledDobavljača.Size = new System.Drawing.Size(230, 34);
+            this.textBoxPregledDobavljača.TabIndex = 27;
+            this.textBoxPregledDobavljača.Text = "Pregled dobavljača";
+            this.textBoxPregledDobavljača.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // pictureBoxPregledDobavljača
             // 
             this.pictureBoxPregledDobavljača.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
@@ -263,6 +164,21 @@
             this.pictureBoxPregledDobavljača.TabIndex = 26;
             this.pictureBoxPregledDobavljača.TabStop = false;
             // 
+            // textBoxNaručiPiće
+            // 
+            this.textBoxNaručiPiće.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.textBoxNaručiPiće.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxNaručiPiće.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.textBoxNaručiPiće.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxNaručiPiće.ForeColor = System.Drawing.Color.Black;
+            this.textBoxNaručiPiće.Location = new System.Drawing.Point(447, 390);
+            this.textBoxNaručiPiće.Multiline = true;
+            this.textBoxNaručiPiće.Name = "textBoxNaručiPiće";
+            this.textBoxNaručiPiće.Size = new System.Drawing.Size(175, 34);
+            this.textBoxNaručiPiće.TabIndex = 25;
+            this.textBoxNaručiPiće.Text = "Naruči piće";
+            this.textBoxNaručiPiće.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // pictureBoxPregledNarudžbi
             // 
             this.pictureBoxPregledNarudžbi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
@@ -274,6 +190,21 @@
             this.pictureBoxPregledNarudžbi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxPregledNarudžbi.TabIndex = 24;
             this.pictureBoxPregledNarudžbi.TabStop = false;
+            // 
+            // textBoxPregledPića
+            // 
+            this.textBoxPregledPića.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.textBoxPregledPića.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxPregledPića.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.textBoxPregledPića.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxPregledPića.ForeColor = System.Drawing.Color.Black;
+            this.textBoxPregledPića.Location = new System.Drawing.Point(57, 390);
+            this.textBoxPregledPića.Multiline = true;
+            this.textBoxPregledPića.Name = "textBoxPregledPića";
+            this.textBoxPregledPića.Size = new System.Drawing.Size(175, 34);
+            this.textBoxPregledPića.TabIndex = 23;
+            this.textBoxPregledPića.Text = "Pregled pića";
+            this.textBoxPregledPića.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pictureBoxPregledPića
             // 
@@ -288,6 +219,21 @@
             this.pictureBoxPregledPića.TabStop = false;
             this.pictureBoxPregledPića.Click += new System.EventHandler(this.pictureBoxPregledPića_Click);
             // 
+            // textBoxRasporedRada
+            // 
+            this.textBoxRasporedRada.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.textBoxRasporedRada.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxRasporedRada.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.textBoxRasporedRada.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxRasporedRada.ForeColor = System.Drawing.Color.Black;
+            this.textBoxRasporedRada.Location = new System.Drawing.Point(35, 735);
+            this.textBoxRasporedRada.Multiline = true;
+            this.textBoxRasporedRada.Name = "textBoxRasporedRada";
+            this.textBoxRasporedRada.Size = new System.Drawing.Size(221, 34);
+            this.textBoxRasporedRada.TabIndex = 21;
+            this.textBoxRasporedRada.Text = "Raspored rada";
+            this.textBoxRasporedRada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // pictureBoxRasporedRada
             // 
             this.pictureBoxRasporedRada.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
@@ -300,6 +246,21 @@
             this.pictureBoxRasporedRada.TabIndex = 20;
             this.pictureBoxRasporedRada.TabStop = false;
             // 
+            // textBoxStatistika
+            // 
+            this.textBoxStatistika.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.textBoxStatistika.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxStatistika.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.textBoxStatistika.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxStatistika.ForeColor = System.Drawing.Color.Black;
+            this.textBoxStatistika.Location = new System.Drawing.Point(467, 735);
+            this.textBoxStatistika.Multiline = true;
+            this.textBoxStatistika.Name = "textBoxStatistika";
+            this.textBoxStatistika.Size = new System.Drawing.Size(149, 34);
+            this.textBoxStatistika.TabIndex = 19;
+            this.textBoxStatistika.Text = "Statistika";
+            this.textBoxStatistika.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // pictureBoxStatistika
             // 
             this.pictureBoxStatistika.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
@@ -311,6 +272,21 @@
             this.pictureBoxStatistika.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxStatistika.TabIndex = 18;
             this.pictureBoxStatistika.TabStop = false;
+            // 
+            // textBoxRecenzije
+            // 
+            this.textBoxRecenzije.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.textBoxRecenzije.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxRecenzije.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.textBoxRecenzije.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxRecenzije.ForeColor = System.Drawing.Color.Black;
+            this.textBoxRecenzije.Location = new System.Drawing.Point(854, 735);
+            this.textBoxRecenzije.Multiline = true;
+            this.textBoxRecenzije.Name = "textBoxRecenzije";
+            this.textBoxRecenzije.Size = new System.Drawing.Size(149, 34);
+            this.textBoxRecenzije.TabIndex = 17;
+            this.textBoxRecenzije.Text = "Recenzije";
+            this.textBoxRecenzije.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pictureBoxRecenzije
             // 
@@ -365,6 +341,21 @@
             this.pictureBoxPregledPićaGlavna.TabIndex = 12;
             this.pictureBoxPregledPićaGlavna.TabStop = false;
             this.pictureBoxPregledPićaGlavna.Click += new System.EventHandler(this.pictureBoxPregledPićaGlavna_Click);
+            // 
+            // textBoxOdjava
+            // 
+            this.textBoxOdjava.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.textBoxOdjava.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxOdjava.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.textBoxOdjava.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxOdjava.ForeColor = System.Drawing.Color.Black;
+            this.textBoxOdjava.Location = new System.Drawing.Point(1279, 725);
+            this.textBoxOdjava.Multiline = true;
+            this.textBoxOdjava.Name = "textBoxOdjava";
+            this.textBoxOdjava.Size = new System.Drawing.Size(149, 34);
+            this.textBoxOdjava.TabIndex = 11;
+            this.textBoxOdjava.Text = "Odjava";
+            this.textBoxOdjava.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pictureBoxOdjava
             // 
@@ -421,10 +412,33 @@
             this.pictureBoxRasporedRadaGlavna.TabIndex = 6;
             this.pictureBoxRasporedRadaGlavna.TabStop = false;
             // 
+            // labelPočetnaStranica
+            // 
+            this.labelPočetnaStranica.AutoSize = true;
+            this.labelPočetnaStranica.Font = new System.Drawing.Font("Bauhaus 93", 40.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPočetnaStranica.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelPočetnaStranica.Location = new System.Drawing.Point(454, 32);
+            this.labelPočetnaStranica.Name = "labelPočetnaStranica";
+            this.labelPočetnaStranica.Size = new System.Drawing.Size(549, 76);
+            this.labelPočetnaStranica.TabIndex = 5;
+            this.labelPočetnaStranica.Text = "Početna Stranica";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bauhaus 93", 40.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label1.Location = new System.Drawing.Point(22, 810);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(341, 76);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Recenzije";
+            // 
             // PočetnaStranica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1500, 1100);
             this.Controls.Add(this.panelDrag);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -480,5 +494,6 @@
         private System.Windows.Forms.PictureBox pictureBoxNaručiPiće;
         private System.Windows.Forms.TextBox textBoxPregledDobavljača;
         private System.Windows.Forms.TextBox textBoxPregledNarudžbi;
+        private System.Windows.Forms.Label label1;
     }
 }
