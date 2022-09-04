@@ -21,6 +21,7 @@ namespace Registracija_i_Prijava.Forme
             comboBoxVrstaPićaPodaci();
             comboBoxKoličinaPodaci();
             comboBoxDohvatiProizvođaće();
+
            
         }
 
@@ -92,7 +93,7 @@ namespace Registracija_i_Prijava.Forme
                 string NazivPića = textBoxNaziv.Text;
                 string Količina = comboBoxKoličina.SelectedItem.ToString();
                 Convert.ToDecimal(Količina);
-                MessageBox.Show(Količina.ToString());
+
                 foreach (var item in context.Količina)
                 {
                     if (Količina == (item.Količina1).ToString())
@@ -103,7 +104,7 @@ namespace Registracija_i_Prijava.Forme
                  
                 }
 
-                MessageBox.Show(KoličinaPića_Id.ToString());
+
                 string PostotakAlkohola=textBoxPostotakAlkohola.Text;
                 
                 string VrstaPića=comboBoxVrstaPića.SelectedItem.ToString();

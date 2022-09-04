@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projekt", "Registracija i P
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "ClassLibrary1\DataAccess.csproj", "{9EBB837A-6DF2-44B2-AD0A-4B53EED5BBCC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validacija", "Validacija\Validacija.csproj", "{3C890332-9593-4A59-B82A-74CEF7F5EE9E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9EBB837A-6DF2-44B2-AD0A-4B53EED5BBCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9EBB837A-6DF2-44B2-AD0A-4B53EED5BBCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9EBB837A-6DF2-44B2-AD0A-4B53EED5BBCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C890332-9593-4A59-B82A-74CEF7F5EE9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C890332-9593-4A59-B82A-74CEF7F5EE9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C890332-9593-4A59-B82A-74CEF7F5EE9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C890332-9593-4A59-B82A-74CEF7F5EE9E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

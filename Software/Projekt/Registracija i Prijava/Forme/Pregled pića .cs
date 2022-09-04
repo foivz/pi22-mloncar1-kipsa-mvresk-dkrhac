@@ -20,6 +20,12 @@ namespace Registracija_i_Prijava.Forme
         {
             InitializeComponent();
             DohvatiPodatke();
+            textBoxNaziv.Enabled = false;
+            textBoxKoličina.Enabled = false;
+            textBoxPostotakAlkohola.Enabled = false;
+            textBoxVrstaPića.Enabled = false;
+            textBoxProizvođać.Enabled = false;
+            textBoxCijena.Enabled = false;
         }
 
         private void DohvatiPodatke()
@@ -39,7 +45,7 @@ namespace Registracija_i_Prijava.Forme
                                 Količina1 = količina.Količina1,
                                 Postotak_Alkohola = pića.Postotak_Alkohola,
                                 Naziv_Vrste = vrstaPića.Naziv_Vrste,
-                                Proizvođać_Id = (int)pića.Proizvođać_Id,
+                             
                                 Naziv_Proizvođaća = proizvođać.Naziv_Proizvođaća,
                                 Cijena = količinaPića.Cijena,
                                 Opis = pića.Opis
@@ -110,7 +116,7 @@ namespace Registracija_i_Prijava.Forme
             int Piće_Id = int.Parse(dataGridViewPića.CurrentRow.Cells[0].Value.ToString());
             string NazivPića = dataGridViewPića.CurrentRow.Cells[1].Value.ToString();
             string Količina = dataGridViewPića.CurrentRow.Cells[2].Value.ToString();
-            PićaExtd odaberi = dataGridViewPića.CurrentRow.DataBoundItem as PićaExtd;
+           // PićaExtd odaberi = dataGridViewPića.CurrentRow.DataBoundItem as PićaExtd;
             using (var context = new PI2257_DBEntities3())
             {
                 var query = from pića in context.Pića
@@ -133,6 +139,8 @@ namespace Registracija_i_Prijava.Forme
 
                     context.Pića.Remove(item.Pića);
                     context.Količina_Pića.Remove(item.Količina_Pića);
+                    
+
 
                 }
 
@@ -160,7 +168,6 @@ namespace Registracija_i_Prijava.Forme
                                 Količina1 = količina.Količina1,
                                 Postotak_Alkohola = pića.Postotak_Alkohola,
                                 Naziv_Vrste = vrstaPića.Naziv_Vrste,
-                                Proizvođać_Id = (int)pića.Proizvođać_Id,
                                 Naziv_Proizvođaća = proizvođać.Naziv_Proizvođaća,
                                 Cijena = količinaPića.Cijena,
                                 Opis = pića.Opis
@@ -170,6 +177,30 @@ namespace Registracija_i_Prijava.Forme
 
                 dataGridViewPića.DataSource = query.ToList();
             }
+        }
+
+        private void panelDrag_Paint(object sender, PaintEventArgs e)
+        {
+           PregledPićaExtd odabrano = dataGridViewPića.CurrentRow.DataBoundItem as PregledPićaExtd;
+            textBoxNaziv.Text = odabrano.Naziv_Pića.ToString();
+            textBoxKoličina.Text = odabrano.Količina1.ToString();
+            textBoxPostotakAlkohola.Text = odabrano.Postotak_Alkohola.ToString();
+            textBoxVrstaPića.Text = odabrano.Naziv_Vrste.ToString();
+            textBoxProizvođać.Text = odabrano.Naziv_Proizvođaća.ToString();
+            textBoxCijena.Text = odabrano.Cijena.ToString();
+            textBoxOpis.Text = odabrano.Opis.ToString();
+        }
+
+        private void dataGridViewPića_SelectionChanged(object sender, EventArgs e)
+        {
+            PregledPićaExtd odabrano = dataGridViewPića.CurrentRow.DataBoundItem as PregledPićaExtd;
+            textBoxNaziv.Text = odabrano.Naziv_Pića.ToString();
+            textBoxKoličina.Text = odabrano.Količina1.ToString();
+            textBoxPostotakAlkohola.Text = odabrano.Postotak_Alkohola.ToString();
+            textBoxVrstaPića.Text = odabrano.Naziv_Vrste.ToString();
+            textBoxProizvođać.Text = odabrano.Naziv_Proizvođaća.ToString();
+            textBoxCijena.Text = odabrano.Cijena.ToString();
+            textBoxOpis.Text = odabrano.Opis.ToString();
         }
     }
 }

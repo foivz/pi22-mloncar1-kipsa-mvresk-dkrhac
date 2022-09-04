@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panelDrag = new System.Windows.Forms.Panel();
-            this.comboBoxSpol = new System.Windows.Forms.ComboBox();
             this.labelOdustani = new System.Windows.Forms.Label();
             this.buttonRegistrirajse = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -42,11 +41,10 @@
             this.textBoxKorisničkoIme = new System.Windows.Forms.TextBox();
             this.pictureBoxKorisničkoIme = new System.Windows.Forms.PictureBox();
             this.pictureBoxSpol = new System.Windows.Forms.PictureBox();
-            this.textBoxAdresa = new System.Windows.Forms.TextBox();
+            this.textBoxSpol = new System.Windows.Forms.TextBox();
             this.pictureBoxAdresa = new System.Windows.Forms.PictureBox();
             this.textBoxLozinka = new System.Windows.Forms.TextBox();
             this.pictureBoxLozinka = new System.Windows.Forms.PictureBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -62,6 +60,7 @@
             this.labelRegistracija = new System.Windows.Forms.Label();
             this.pictureBoxIme = new System.Windows.Forms.PictureBox();
             this.pictureBoxLogoVIK = new System.Windows.Forms.PictureBox();
+            this.textBoxAdresa = new System.Windows.Forms.TextBox();
             this.panelDrag.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPonovljenaLozinka)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKorisničkoIme)).BeginInit();
@@ -78,7 +77,6 @@
             // 
             // panelDrag
             // 
-            this.panelDrag.Controls.Add(this.comboBoxSpol);
             this.panelDrag.Controls.Add(this.labelOdustani);
             this.panelDrag.Controls.Add(this.buttonRegistrirajse);
             this.panelDrag.Controls.Add(this.panel9);
@@ -91,11 +89,11 @@
             this.panelDrag.Controls.Add(this.textBoxKorisničkoIme);
             this.panelDrag.Controls.Add(this.pictureBoxKorisničkoIme);
             this.panelDrag.Controls.Add(this.pictureBoxSpol);
-            this.panelDrag.Controls.Add(this.textBoxAdresa);
+            this.panelDrag.Controls.Add(this.textBoxSpol);
             this.panelDrag.Controls.Add(this.pictureBoxAdresa);
             this.panelDrag.Controls.Add(this.textBoxLozinka);
             this.panelDrag.Controls.Add(this.pictureBoxLozinka);
-            this.panelDrag.Controls.Add(this.textBox4);
+            this.panelDrag.Controls.Add(this.textBoxAdresa);
             this.panelDrag.Controls.Add(this.pictureBox7);
             this.panelDrag.Controls.Add(this.panel4);
             this.panelDrag.Controls.Add(this.panel1);
@@ -119,22 +117,6 @@
             this.panelDrag.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelDrag_MouseDown);
             this.panelDrag.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelDrag_MouseMove);
             this.panelDrag.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelDrag_MouseUp);
-            // 
-            // comboBoxSpol
-            // 
-            this.comboBoxSpol.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBoxSpol.BackColor = System.Drawing.SystemColors.Menu;
-            this.comboBoxSpol.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.comboBoxSpol.FormattingEnabled = true;
-            this.comboBoxSpol.Items.AddRange(new object[] {
-            "Muško",
-            "Žensko",
-            "Ne želim reći"});
-            this.comboBoxSpol.Location = new System.Drawing.Point(170, 689);
-            this.comboBoxSpol.Margin = new System.Windows.Forms.Padding(0);
-            this.comboBoxSpol.Name = "comboBoxSpol";
-            this.comboBoxSpol.Size = new System.Drawing.Size(300, 37);
-            this.comboBoxSpol.TabIndex = 94;
             // 
             // labelOdustani
             // 
@@ -162,6 +144,7 @@
             this.buttonRegistrirajse.TabIndex = 92;
             this.buttonRegistrirajse.Text = "Registriraj se";
             this.buttonRegistrirajse.UseVisualStyleBackColor = false;
+            this.buttonRegistrirajse.Click += new System.EventHandler(this.buttonRegistrirajse_Click);
             this.buttonRegistrirajse.MouseLeave += new System.EventHandler(this.buttonRegistrirajse_MouseLeave);
             this.buttonRegistrirajse.MouseHover += new System.EventHandler(this.buttonRegistrirajse_MouseHover);
             // 
@@ -263,19 +246,19 @@
             this.pictureBoxSpol.TabIndex = 81;
             this.pictureBoxSpol.TabStop = false;
             // 
-            // textBoxAdresa
+            // textBoxSpol
             // 
-            this.textBoxAdresa.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxAdresa.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxAdresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxAdresa.Location = new System.Drawing.Point(170, 604);
-            this.textBoxAdresa.Multiline = true;
-            this.textBoxAdresa.Name = "textBoxAdresa";
-            this.textBoxAdresa.Size = new System.Drawing.Size(300, 40);
-            this.textBoxAdresa.TabIndex = 80;
-            this.textBoxAdresa.Text = "Adresa";
-            this.textBoxAdresa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBoxAdresa.Click += new System.EventHandler(this.textBoxAdresa_Click);
+            this.textBoxSpol.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxSpol.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxSpol.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxSpol.Location = new System.Drawing.Point(170, 683);
+            this.textBoxSpol.Multiline = true;
+            this.textBoxSpol.Name = "textBoxSpol";
+            this.textBoxSpol.Size = new System.Drawing.Size(300, 40);
+            this.textBoxSpol.TabIndex = 80;
+            this.textBoxSpol.Text = "Spol";
+            this.textBoxSpol.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxSpol.Click += new System.EventHandler(this.textBoxAdresa_Click);
             // 
             // pictureBoxAdresa
             // 
@@ -310,19 +293,6 @@
             this.pictureBoxLozinka.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxLozinka.TabIndex = 77;
             this.pictureBoxLozinka.TabStop = false;
-            // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox4.Location = new System.Drawing.Point(170, 604);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(300, 40);
-            this.textBox4.TabIndex = 76;
-            this.textBox4.Text = "Adresa";
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pictureBox7
             // 
@@ -483,6 +453,19 @@
             this.pictureBoxLogoVIK.TabStop = false;
             this.pictureBoxLogoVIK.Click += new System.EventHandler(this.pictureBoxLogoVIK_Click);
             // 
+            // textBoxAdresa
+            // 
+            this.textBoxAdresa.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxAdresa.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxAdresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxAdresa.Location = new System.Drawing.Point(170, 604);
+            this.textBoxAdresa.Multiline = true;
+            this.textBoxAdresa.Name = "textBoxAdresa";
+            this.textBoxAdresa.Size = new System.Drawing.Size(300, 40);
+            this.textBoxAdresa.TabIndex = 76;
+            this.textBoxAdresa.Text = "Adresa";
+            this.textBoxAdresa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Registracija
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -513,7 +496,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panelDrag;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel1;
@@ -541,10 +523,10 @@
         private System.Windows.Forms.TextBox textBoxKorisničkoIme;
         private System.Windows.Forms.PictureBox pictureBoxKorisničkoIme;
         private System.Windows.Forms.PictureBox pictureBoxSpol;
-        private System.Windows.Forms.TextBox textBoxAdresa;
+        private System.Windows.Forms.TextBox textBoxSpol;
         private System.Windows.Forms.PictureBox pictureBoxAdresa;
         private System.Windows.Forms.TextBox textBoxLozinka;
         private System.Windows.Forms.PictureBox pictureBoxLozinka;
-        private System.Windows.Forms.ComboBox comboBoxSpol;
+        private System.Windows.Forms.TextBox textBoxAdresa;
     }
 }

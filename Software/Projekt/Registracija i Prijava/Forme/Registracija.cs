@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassLibrary1;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Validacija;
 
 namespace Registracija_i_Prijava
 {
@@ -14,9 +16,24 @@ namespace Registracija_i_Prijava
     {
         bool mouseDown;
         private Point offset;
+        string Korisničko;
         public Registracija()
         {
             InitializeComponent();
+            DohvatiKorisnika();
+        }
+
+        private Korisnik DohvatiKorisnika()
+        {
+            
+            using (var context = new PI2257_DBEntities3())
+            {
+                var query = from p in context.Korisnik
+                            where p.Korisničko_Ime==textBoxKorisničkoIme.Text
+                            select p;
+                
+                return query.FirstOrDefault();
+            }
         }
 
         private void panelDrag_MouseDown(object sender, MouseEventArgs e)
@@ -75,7 +92,7 @@ namespace Registracija_i_Prijava
             textBoxKorisničkoIme.Text = "Korisničko ime";
             textBoxLozinka.Text = "Lozinka";
             textBoxPonovljenaLozinka.Text = "Ponovljena lozinka";
-            comboBoxSpol.Text = "";
+            textBoxSpol.Text = "";
         }
 
         private void textBoxIme_Click(object sender, EventArgs e)
@@ -100,7 +117,7 @@ namespace Registracija_i_Prijava
 
         private void textBoxAdresa_Click(object sender, EventArgs e)
         {
-            textBoxAdresa.Text = "";
+            textBoxSpol.Text = "";
         }
 
         private void textBoxKorisničkoIme_Click(object sender, EventArgs e)
@@ -128,6 +145,60 @@ namespace Registracija_i_Prijava
             
         }
 
-        
+        private void buttonRegistrirajse_Click(object sender, EventArgs e)
+        {
+
+            
+            string[] validacijaKorisnika = new string[9];
+            validacijaKorisnika[0] = textBoxIme.Text;
+            validacijaKorisnika[1]=textBoxPrezime.Text;
+            validacijaKorisnika[2]=textBoxEmail.Text;
+            validacijaKorisnika[3]=textBoxBrojMobitela.Text;
+            validacijaKorisnika[4]=textBoxAdresa.Text;
+            validacijaKorisnika[5] = textBoxSpol.Text;
+            validacijaKorisnika[6]=textBoxKorisničkoIme.Text;
+            validacijaKorisnika[7] = textBoxLozinka.Text;
+            validacijaKorisnika[8] = textBoxPonovljenaLozinka.Text;
+            ValidacijaRegistracije validacija = new ValidacijaRegistracije();
+            string poruka = validacija.ValidirajKorisnika(validacijaKorisnika);
+            Korisnik dohvaćeniKorisnik = DohvatiKorisnika();
+            if (poruka != "")
+            {
+                MessageBox.Show(poruka);
+            }
+
+            else if (dohvaćeniKorisnik != null) { 
+                MessageBox.Show("Korisničko ime je zauzeto!");
+            }
+            else
+            {
+                using (var context = new PI2257_DBEntities3())
+                {
+                    Korisnik novo = new Korisnik()
+                    {
+                        Ime =textBoxIme.Text,
+                        Prezime =textBoxPrezime.Text,
+                        Email =textBoxEmail.Text,
+                        Broj_Mobitela=int.Parse(textBoxBrojMobitela.Text),
+                        Adresa =textBoxAdresa.Text,
+                        Spol=textBoxSpol.Text,
+                        Korisničko_Ime=textBoxKorisničkoIme.Text,
+                        Lozinka =textBoxLozinka.Text,
+                        Ponovljena_Lozinka=textBoxPonovljenaLozinka.Text,
+                        Uloga_Id=1
+                    };
+
+                    context.Korisnik.Add(novo);
+                    context.SaveChanges();
+                    MessageBox.Show("Uspješno ste obavili registraciju");
+                    Prijava prijava= new Prijava();
+                    Hide();
+                    prijava.ShowDialog();
+                    Close();
+
+                }
+
+            }
+        }
     }
 }

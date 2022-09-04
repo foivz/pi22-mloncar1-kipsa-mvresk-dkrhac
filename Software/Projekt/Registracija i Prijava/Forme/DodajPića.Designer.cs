@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelDrag = new System.Windows.Forms.Panel();
+            this.comboBoxProizvođać = new System.Windows.Forms.ComboBox();
             this.comboBoxKoličina = new System.Windows.Forms.ComboBox();
             this.comboBoxVrstaPića = new System.Windows.Forms.ComboBox();
             this.buttonOdustani = new System.Windows.Forms.Button();
@@ -45,9 +46,8 @@
             this.pictureBoxSlika = new System.Windows.Forms.PictureBox();
             this.textBoxOpis = new System.Windows.Forms.TextBox();
             this.textBoxPostotakAlkohola = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
+            this.label1DodavanjePića = new System.Windows.Forms.Label();
             this.textBoxNaziv = new System.Windows.Forms.TextBox();
-            this.comboBoxProizvođać = new System.Windows.Forms.ComboBox();
             this.panelDrag.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSlika)).BeginInit();
             this.SuspendLayout();
@@ -71,7 +71,7 @@
             this.panelDrag.Controls.Add(this.pictureBoxSlika);
             this.panelDrag.Controls.Add(this.textBoxOpis);
             this.panelDrag.Controls.Add(this.textBoxPostotakAlkohola);
-            this.panelDrag.Controls.Add(this.label13);
+            this.panelDrag.Controls.Add(this.label1DodavanjePića);
             this.panelDrag.Controls.Add(this.textBoxNaziv);
             this.panelDrag.Location = new System.Drawing.Point(-1, -2);
             this.panelDrag.Name = "panelDrag";
@@ -80,6 +80,15 @@
             this.panelDrag.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelDrag_MouseDown);
             this.panelDrag.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelDrag_MouseMove);
             this.panelDrag.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelDrag_MouseUp);
+            // 
+            // comboBoxProizvođać
+            // 
+            this.comboBoxProizvođać.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBoxProizvođać.FormattingEnabled = true;
+            this.comboBoxProizvođać.Location = new System.Drawing.Point(350, 431);
+            this.comboBoxProizvođać.Name = "comboBoxProizvođać";
+            this.comboBoxProizvođać.Size = new System.Drawing.Size(246, 37);
+            this.comboBoxProizvođać.TabIndex = 68;
             // 
             // comboBoxKoličina
             // 
@@ -253,16 +262,16 @@
             this.textBoxPostotakAlkohola.TabIndex = 50;
             this.textBoxPostotakAlkohola.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label13
+            // label1DodavanjePića
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Bauhaus 93", 40.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label13.Location = new System.Drawing.Point(478, 11);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(422, 76);
-            this.label13.TabIndex = 48;
-            this.label13.Text = "Pregled pića";
+            this.label1DodavanjePića.AutoSize = true;
+            this.label1DodavanjePića.Font = new System.Drawing.Font("Bauhaus 93", 40.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1DodavanjePića.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label1DodavanjePića.Location = new System.Drawing.Point(478, 11);
+            this.label1DodavanjePića.Name = "label1DodavanjePića";
+            this.label1DodavanjePića.Size = new System.Drawing.Size(520, 76);
+            this.label1DodavanjePića.TabIndex = 48;
+            this.label1DodavanjePića.Text = "Dodavanje pića";
             // 
             // textBoxNaziv
             // 
@@ -273,15 +282,6 @@
             this.textBoxNaziv.Size = new System.Drawing.Size(246, 38);
             this.textBoxNaziv.TabIndex = 47;
             this.textBoxNaziv.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // comboBoxProizvođać
-            // 
-            this.comboBoxProizvođać.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.comboBoxProizvođać.FormattingEnabled = true;
-            this.comboBoxProizvođać.Location = new System.Drawing.Point(350, 431);
-            this.comboBoxProizvođać.Name = "comboBoxProizvođać";
-            this.comboBoxProizvođać.Size = new System.Drawing.Size(246, 37);
-            this.comboBoxProizvođać.TabIndex = 68;
             // 
             // DodajPića
             // 
@@ -315,7 +315,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.PictureBox pictureBoxSlika;
         private System.Windows.Forms.TextBox textBoxOpis;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label1DodavanjePića;
         private System.Windows.Forms.TextBox textBoxNaziv;
         private System.Windows.Forms.ComboBox comboBoxVrstaPića;
         private System.Windows.Forms.ComboBox comboBoxKoličina;
