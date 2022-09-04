@@ -33,7 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,6 +53,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DodatneKlase\PregledPićaExtd.cs" />
+    <Compile Include="Forme\AžurirajPića.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\AžurirajPića.Designer.cs">
+      <DependentUpon>AžurirajPića.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\DodajPića.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\DodajPića.Designer.cs">
+      <DependentUpon>DodajPića.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forme\PočetnaStranica.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +84,7 @@
     <Compile Include="Forme\Prijava.Designer.cs">
       <DependentUpon>Prijava.cs</DependentUpon>
     </Compile>
+    <Compile Include="PićaExtd.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Forme\Registracija.cs">
@@ -72,6 +93,12 @@
     <Compile Include="Forme\Registracija.Designer.cs">
       <DependentUpon>Registracija.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forme\AžurirajPića.resx">
+      <DependentUpon>AžurirajPića.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\DodajPića.resx">
+      <DependentUpon>DodajPića.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forme\PočetnaStranica.resx">
       <DependentUpon>PočetnaStranica.cs</DependentUpon>
     </EmbeddedResource>
@@ -94,6 +121,7 @@
     <EmbeddedResource Include="Forme\Registracija.resx">
       <DependentUpon>Registracija.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -250,6 +278,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\homepage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1\DataAccess.csproj">
+      <Project>{9EBB837A-6DF2-44B2-AD0A-4B53EED5BBCC}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

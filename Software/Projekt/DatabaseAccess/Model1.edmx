@@ -1,0 +1,1327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PI2257_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Dobavljač">
+          <Key>
+            <PropertyRef Name="Dobavljač_Id" />
+          </Key>
+          <Property Name="Dobavljač_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Naziv_dobavljača" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Ulica" Type="nchar" MaxLength="60" Nullable="false" />
+          <Property Name="Grad_Id" Type="int" Nullable="false" />
+          <Property Name="Država_Id" Type="int" Nullable="false" />
+          <Property Name="Broj_Telefona" Type="int" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Logo" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Država">
+          <Key>
+            <PropertyRef Name="Država_Id" />
+          </Key>
+          <Property Name="Država_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ime_Države" Type="nchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Grad">
+          <Key>
+            <PropertyRef Name="Grad_Id" />
+          </Key>
+          <Property Name="Grad_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ime_Grada" Type="nchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Količina">
+          <Key>
+            <PropertyRef Name="Količina_Id" />
+          </Key>
+          <Property Name="Količina_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Količina" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Količina_Pića">
+          <Key>
+            <PropertyRef Name="Količina_Id" />
+            <PropertyRef Name="Piće_Id" />
+          </Key>
+          <Property Name="Količina_Id" Type="int" Nullable="false" />
+          <Property Name="Piće_Id" Type="int" Nullable="false" />
+          <Property Name="Cijena" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Korisnik">
+          <Key>
+            <PropertyRef Name="Korisnik_Id" />
+          </Key>
+          <Property Name="Korisnik_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ime" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Prezime" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Broj_Mobitela" Type="int" Nullable="false" />
+          <Property Name="Adresa" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Spol" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Korisničko_Ime" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Lozinka" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Ponovljena_Lozinka" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Uloga_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Način Plaćanja">
+          <Key>
+            <PropertyRef Name="Plaćanje_Id" />
+          </Key>
+          <Property Name="Plaćanje_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Vrsta_Plaćanja" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Narudžba">
+          <Key>
+            <PropertyRef Name="Narudžba_Id" />
+          </Key>
+          <Property Name="Narudžba_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Dobavljač_Id" Type="int" Nullable="false" />
+          <Property Name="Plaćanje_Id" Type="int" Nullable="false" />
+          <Property Name="Datum_Isporuke" Type="datetime" Nullable="false" />
+          <Property Name="Grad_Id" Type="int" Nullable="false" />
+          <Property Name="Država_Id" Type="int" Nullable="false" />
+          <Property Name="Izvršena" Type="bit" Nullable="false" />
+          <Property Name="Ulica" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Narudžba_Dobavljač">
+          <Key>
+            <PropertyRef Name="Narudžba_Id" />
+            <PropertyRef Name="Piće_Id" />
+          </Key>
+          <Property Name="Narudžba_Id" Type="int" Nullable="false" />
+          <Property Name="Piće_Id" Type="int" Nullable="false" />
+          <Property Name="Količina" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Narudžba_Kupac">
+          <Key>
+            <PropertyRef Name="Račun_Id" />
+            <PropertyRef Name="Piće_Id" />
+          </Key>
+          <Property Name="Račun_Id" Type="int" Nullable="false" />
+          <Property Name="Piće_Id" Type="int" Nullable="false" />
+          <Property Name="Količina" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pića">
+          <Key>
+            <PropertyRef Name="Piće_Id" />
+          </Key>
+          <Property Name="Piće_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Naziv_Pića" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Postotak_Alkohola" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="VrstaPića_Id" Type="int" Nullable="false" />
+          <Property Name="Proizvođač_Id" Type="int" Nullable="false" />
+          <Property Name="Opis" Type="varchar(max)" Nullable="false" />
+          <Property Name="Slika" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Proizvođać">
+          <Key>
+            <PropertyRef Name="Proizvođać_Id" />
+          </Key>
+          <Property Name="Proizvođać_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Naziv_Proizvođaća" Type="nchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Račun">
+          <Key>
+            <PropertyRef Name="Račun_Id" />
+          </Key>
+          <Property Name="Račun_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Korisnik_Id" Type="int" Nullable="false" />
+          <Property Name="Ulica" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Grad_Id" Type="int" Nullable="false" />
+          <Property Name="Država_Id" Type="int" Nullable="false" />
+          <Property Name="Datum_Isporuke" Type="datetime" Nullable="false" />
+          <Property Name="Izvršeno" Type="bit" Nullable="false" />
+          <Property Name="Plaćanje_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Raspored rada">
+          <Key>
+            <PropertyRef Name="Raspored_Id" />
+          </Key>
+          <Property Name="Raspored_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Datum" Type="date" Nullable="false" />
+          <Property Name="VrijemePočetka_Smjene" Type="time" Precision="7" Nullable="false" />
+          <Property Name="VrijemeZavršetka_Smjene" Type="time" Precision="7" Nullable="false" />
+          <Property Name="Korisnik_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Recenzije">
+          <Key>
+            <PropertyRef Name="Recenzije_Id" />
+          </Key>
+          <Property Name="Recenzije_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Komentar" Type="varchar(max)" Nullable="false" />
+          <Property Name="Ocjena" Type="int" Nullable="false" />
+          <Property Name="Korisnik_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Uloga">
+          <Key>
+            <PropertyRef Name="Uloga_Id" />
+          </Key>
+          <Property Name="Uloga_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Naziv_Uloge" Type="nchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Vrsta pića">
+          <Key>
+            <PropertyRef Name="VrstaPića_Id" />
+          </Key>
+          <Property Name="VrstaPića_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Naziv_Vrste" Type="nchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Količina___Količ__6FE99F9F">
+          <End Role="Količina" Type="Self.Količina" Multiplicity="1" />
+          <End Role="Količina_Pića" Type="Self.Količina_Pića" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Količina">
+              <PropertyRef Name="Količina_Id" />
+            </Principal>
+            <Dependent Role="Količina_Pića">
+              <PropertyRef Name="Količina_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Količina___Piće___70DDC3D8">
+          <End Role="Pića" Type="Self.Pića" Multiplicity="1" />
+          <End Role="Količina_Pića" Type="Self.Količina_Pića" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pića">
+              <PropertyRef Name="Piće_Id" />
+            </Principal>
+            <Dependent Role="Količina_Pića">
+              <PropertyRef Name="Piće_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Narudžba___Narud__02084FDA">
+          <End Role="Narudžba" Type="Self.Narudžba" Multiplicity="1" />
+          <End Role="Narudžba_Dobavljač" Type="Self.Narudžba_Dobavljač" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Narudžba">
+              <PropertyRef Name="Narudžba_Id" />
+            </Principal>
+            <Dependent Role="Narudžba_Dobavljač">
+              <PropertyRef Name="Narudžba_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Narudžba___Piće___02FC7413">
+          <End Role="Pića" Type="Self.Pića" Multiplicity="1" />
+          <End Role="Narudžba_Dobavljač" Type="Self.Narudžba_Dobavljač" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pića">
+              <PropertyRef Name="Piće_Id" />
+            </Principal>
+            <Dependent Role="Narudžba_Dobavljač">
+              <PropertyRef Name="Piće_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Narudžba___Piće___7F2BE32F">
+          <End Role="Pića" Type="Self.Pića" Multiplicity="1" />
+          <End Role="Narudžba_Kupac" Type="Self.Narudžba_Kupac" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pića">
+              <PropertyRef Name="Piće_Id" />
+            </Principal>
+            <Dependent Role="Narudžba_Kupac">
+              <PropertyRef Name="Piće_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Narudžba___Račun__7E37BEF6">
+          <End Role="Račun" Type="Self.Račun" Multiplicity="1" />
+          <End Role="Narudžba_Kupac" Type="Self.Narudžba_Kupac" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Račun">
+              <PropertyRef Name="Račun_Id" />
+            </Principal>
+            <Dependent Role="Narudžba_Kupac">
+              <PropertyRef Name="Račun_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Dobavljač_Država">
+          <End Role="Država" Type="Self.Država" Multiplicity="1" />
+          <End Role="Dobavljač" Type="Self.Dobavljač" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Država">
+              <PropertyRef Name="Država_Id" />
+            </Principal>
+            <Dependent Role="Dobavljač">
+              <PropertyRef Name="Država_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Dobavljač_Grad">
+          <End Role="Grad" Type="Self.Grad" Multiplicity="1" />
+          <End Role="Dobavljač" Type="Self.Dobavljač" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grad">
+              <PropertyRef Name="Grad_Id" />
+            </Principal>
+            <Dependent Role="Dobavljač">
+              <PropertyRef Name="Grad_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Korisnik_Uloga">
+          <End Role="Uloga" Type="Self.Uloga" Multiplicity="1" />
+          <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uloga">
+              <PropertyRef Name="Uloga_Id" />
+            </Principal>
+            <Dependent Role="Korisnik">
+              <PropertyRef Name="Uloga_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Narudžba_Dobavljač">
+          <End Role="Dobavljač" Type="Self.Dobavljač" Multiplicity="1" />
+          <End Role="Narudžba" Type="Self.Narudžba" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dobavljač">
+              <PropertyRef Name="Dobavljač_Id" />
+            </Principal>
+            <Dependent Role="Narudžba">
+              <PropertyRef Name="Dobavljač_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Narudžba_Država">
+          <End Role="Država" Type="Self.Država" Multiplicity="1" />
+          <End Role="Narudžba" Type="Self.Narudžba" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Država">
+              <PropertyRef Name="Država_Id" />
+            </Principal>
+            <Dependent Role="Narudžba">
+              <PropertyRef Name="Država_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Narudžba_Grad">
+          <End Role="Grad" Type="Self.Grad" Multiplicity="1" />
+          <End Role="Narudžba" Type="Self.Narudžba" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grad">
+              <PropertyRef Name="Grad_Id" />
+            </Principal>
+            <Dependent Role="Narudžba">
+              <PropertyRef Name="Grad_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Narudžba_Način Plaćanja">
+          <End Role="Način Plaćanja" Type="Self.Način Plaćanja" Multiplicity="1" />
+          <End Role="Narudžba" Type="Self.Narudžba" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Način Plaćanja">
+              <PropertyRef Name="Plaćanje_Id" />
+            </Principal>
+            <Dependent Role="Narudžba">
+              <PropertyRef Name="Plaćanje_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pića_Proizvođać">
+          <End Role="Proizvođać" Type="Self.Proizvođać" Multiplicity="1" />
+          <End Role="Pića" Type="Self.Pića" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proizvođać">
+              <PropertyRef Name="Proizvođać_Id" />
+            </Principal>
+            <Dependent Role="Pića">
+              <PropertyRef Name="Proizvođač_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pića_Vrsta pića">
+          <End Role="Vrsta pića" Type="Self.Vrsta pića" Multiplicity="1" />
+          <End Role="Pića" Type="Self.Pića" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vrsta pića">
+              <PropertyRef Name="VrstaPića_Id" />
+            </Principal>
+            <Dependent Role="Pića">
+              <PropertyRef Name="VrstaPića_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Račun_Država">
+          <End Role="Država" Type="Self.Država" Multiplicity="1" />
+          <End Role="Račun" Type="Self.Račun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Država">
+              <PropertyRef Name="Država_Id" />
+            </Principal>
+            <Dependent Role="Račun">
+              <PropertyRef Name="Država_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Račun_Grad">
+          <End Role="Grad" Type="Self.Grad" Multiplicity="1" />
+          <End Role="Račun" Type="Self.Račun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grad">
+              <PropertyRef Name="Grad_Id" />
+            </Principal>
+            <Dependent Role="Račun">
+              <PropertyRef Name="Grad_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Račun_Korisnik">
+          <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="1" />
+          <End Role="Račun" Type="Self.Račun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Korisnik">
+              <PropertyRef Name="Korisnik_Id" />
+            </Principal>
+            <Dependent Role="Račun">
+              <PropertyRef Name="Korisnik_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Račun_Račun">
+          <End Role="Način Plaćanja" Type="Self.Način Plaćanja" Multiplicity="1" />
+          <End Role="Račun" Type="Self.Račun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Način Plaćanja">
+              <PropertyRef Name="Plaćanje_Id" />
+            </Principal>
+            <Dependent Role="Račun">
+              <PropertyRef Name="Plaćanje_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Raspored rada_Korisnik">
+          <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="1" />
+          <End Role="Raspored rada" Type="Self.Raspored rada" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Korisnik">
+              <PropertyRef Name="Korisnik_Id" />
+            </Principal>
+            <Dependent Role="Raspored rada">
+              <PropertyRef Name="Korisnik_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Recenzije_Korisnik">
+          <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="1" />
+          <End Role="Recenzije" Type="Self.Recenzije" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Korisnik">
+              <PropertyRef Name="Korisnik_Id" />
+            </Principal>
+            <Dependent Role="Recenzije">
+              <PropertyRef Name="Korisnik_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PI2257_DBModelStoreContainer">
+          <EntitySet Name="Dobavljač" EntityType="Self.Dobavljač" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Država" EntityType="Self.Država" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Grad" EntityType="Self.Grad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Količina" EntityType="Self.Količina" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Količina_Pića" EntityType="Self.Količina_Pića" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Korisnik" EntityType="Self.Korisnik" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Način Plaćanja" EntityType="Self.Način Plaćanja" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Narudžba" EntityType="Self.Narudžba" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Narudžba_Dobavljač" EntityType="Self.Narudžba_Dobavljač" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Narudžba_Kupac" EntityType="Self.Narudžba_Kupac" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pića" EntityType="Self.Pića" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Proizvođać" EntityType="Self.Proizvođać" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Račun" EntityType="Self.Račun" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Raspored rada" EntityType="Self.Raspored rada" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Recenzije" EntityType="Self.Recenzije" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Uloga" EntityType="Self.Uloga" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vrsta pića" EntityType="Self.Vrsta pića" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Količina___Količ__6FE99F9F" Association="Self.FK__Količina___Količ__6FE99F9F">
+            <End Role="Količina" EntitySet="Količina" />
+            <End Role="Količina_Pića" EntitySet="Količina_Pića" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Količina___Piće___70DDC3D8" Association="Self.FK__Količina___Piće___70DDC3D8">
+            <End Role="Pića" EntitySet="Pića" />
+            <End Role="Količina_Pića" EntitySet="Količina_Pića" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Narudžba___Narud__02084FDA" Association="Self.FK__Narudžba___Narud__02084FDA">
+            <End Role="Narudžba" EntitySet="Narudžba" />
+            <End Role="Narudžba_Dobavljač" EntitySet="Narudžba_Dobavljač" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Narudžba___Piće___02FC7413" Association="Self.FK__Narudžba___Piće___02FC7413">
+            <End Role="Pića" EntitySet="Pića" />
+            <End Role="Narudžba_Dobavljač" EntitySet="Narudžba_Dobavljač" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Narudžba___Piće___7F2BE32F" Association="Self.FK__Narudžba___Piće___7F2BE32F">
+            <End Role="Pića" EntitySet="Pića" />
+            <End Role="Narudžba_Kupac" EntitySet="Narudžba_Kupac" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Narudžba___Račun__7E37BEF6" Association="Self.FK__Narudžba___Račun__7E37BEF6">
+            <End Role="Račun" EntitySet="Račun" />
+            <End Role="Narudžba_Kupac" EntitySet="Narudžba_Kupac" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Dobavljač_Država" Association="Self.FK_Dobavljač_Država">
+            <End Role="Država" EntitySet="Država" />
+            <End Role="Dobavljač" EntitySet="Dobavljač" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Dobavljač_Grad" Association="Self.FK_Dobavljač_Grad">
+            <End Role="Grad" EntitySet="Grad" />
+            <End Role="Dobavljač" EntitySet="Dobavljač" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Korisnik_Uloga" Association="Self.FK_Korisnik_Uloga">
+            <End Role="Uloga" EntitySet="Uloga" />
+            <End Role="Korisnik" EntitySet="Korisnik" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Narudžba_Dobavljač" Association="Self.FK_Narudžba_Dobavljač">
+            <End Role="Dobavljač" EntitySet="Dobavljač" />
+            <End Role="Narudžba" EntitySet="Narudžba" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Narudžba_Država" Association="Self.FK_Narudžba_Država">
+            <End Role="Država" EntitySet="Država" />
+            <End Role="Narudžba" EntitySet="Narudžba" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Narudžba_Grad" Association="Self.FK_Narudžba_Grad">
+            <End Role="Grad" EntitySet="Grad" />
+            <End Role="Narudžba" EntitySet="Narudžba" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Narudžba_Način Plaćanja" Association="Self.FK_Narudžba_Način Plaćanja">
+            <End Role="Način Plaćanja" EntitySet="Način Plaćanja" />
+            <End Role="Narudžba" EntitySet="Narudžba" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pića_Proizvođać" Association="Self.FK_Pića_Proizvođać">
+            <End Role="Proizvođać" EntitySet="Proizvođać" />
+            <End Role="Pića" EntitySet="Pića" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pića_Vrsta pića" Association="Self.FK_Pića_Vrsta pića">
+            <End Role="Vrsta pića" EntitySet="Vrsta pića" />
+            <End Role="Pića" EntitySet="Pića" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Račun_Država" Association="Self.FK_Račun_Država">
+            <End Role="Država" EntitySet="Država" />
+            <End Role="Račun" EntitySet="Račun" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Račun_Grad" Association="Self.FK_Račun_Grad">
+            <End Role="Grad" EntitySet="Grad" />
+            <End Role="Račun" EntitySet="Račun" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Račun_Korisnik" Association="Self.FK_Račun_Korisnik">
+            <End Role="Korisnik" EntitySet="Korisnik" />
+            <End Role="Račun" EntitySet="Račun" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Račun_Račun" Association="Self.FK_Račun_Račun">
+            <End Role="Način Plaćanja" EntitySet="Način Plaćanja" />
+            <End Role="Račun" EntitySet="Račun" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Raspored rada_Korisnik" Association="Self.FK_Raspored rada_Korisnik">
+            <End Role="Korisnik" EntitySet="Korisnik" />
+            <End Role="Raspored rada" EntitySet="Raspored rada" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Recenzije_Korisnik" Association="Self.FK_Recenzije_Korisnik">
+            <End Role="Korisnik" EntitySet="Korisnik" />
+            <End Role="Recenzije" EntitySet="Recenzije" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PI2257_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Dobavljač">
+          <Key>
+            <PropertyRef Name="Dobavljač_Id" />
+          </Key>
+          <Property Name="Dobavljač_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv_dobavljača" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Ulica" Type="String" MaxLength="60" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Grad_Id" Type="Int32" Nullable="false" />
+          <Property Name="Država_Id" Type="Int32" Nullable="false" />
+          <Property Name="Broj_Telefona" Type="Int32" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Logo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Država" Relationship="Self.FK_Dobavljač_Država" FromRole="Dobavljač" ToRole="Država" />
+          <NavigationProperty Name="Grad" Relationship="Self.FK_Dobavljač_Grad" FromRole="Dobavljač" ToRole="Grad" />
+          <NavigationProperty Name="Narudžba" Relationship="Self.FK_Narudžba_Dobavljač" FromRole="Dobavljač" ToRole="Narudžba" />
+        </EntityType>
+        <EntityType Name="Država">
+          <Key>
+            <PropertyRef Name="Država_Id" />
+          </Key>
+          <Property Name="Država_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ime_Države" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Dobavljač" Relationship="Self.FK_Dobavljač_Država" FromRole="Država" ToRole="Dobavljač" />
+          <NavigationProperty Name="Narudžba" Relationship="Self.FK_Narudžba_Država" FromRole="Država" ToRole="Narudžba" />
+          <NavigationProperty Name="Račun" Relationship="Self.FK_Račun_Država" FromRole="Država" ToRole="Račun" />
+        </EntityType>
+        <EntityType Name="Grad">
+          <Key>
+            <PropertyRef Name="Grad_Id" />
+          </Key>
+          <Property Name="Grad_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ime_Grada" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Dobavljač" Relationship="Self.FK_Dobavljač_Grad" FromRole="Grad" ToRole="Dobavljač" />
+          <NavigationProperty Name="Narudžba" Relationship="Self.FK_Narudžba_Grad" FromRole="Grad" ToRole="Narudžba" />
+          <NavigationProperty Name="Račun" Relationship="Self.FK_Račun_Grad" FromRole="Grad" ToRole="Račun" />
+        </EntityType>
+        <EntityType Name="Količina">
+          <Key>
+            <PropertyRef Name="Količina_Id" />
+          </Key>
+          <Property Name="Količina_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Količina1" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <NavigationProperty Name="Količina_Pića" Relationship="Self.FK__Količina___Količ__6FE99F9F" FromRole="Količina" ToRole="Količina_Pića" />
+        </EntityType>
+        <EntityType Name="Količina_Pića">
+          <Key>
+            <PropertyRef Name="Količina_Id" />
+            <PropertyRef Name="Piće_Id" />
+          </Key>
+          <Property Name="Količina_Id" Type="Int32" Nullable="false" />
+          <Property Name="Piće_Id" Type="Int32" Nullable="false" />
+          <Property Name="Cijena" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <NavigationProperty Name="Količina" Relationship="Self.FK__Količina___Količ__6FE99F9F" FromRole="Količina_Pića" ToRole="Količina" />
+          <NavigationProperty Name="Pića" Relationship="Self.FK__Količina___Piće___70DDC3D8" FromRole="Količina_Pića" ToRole="Pića" />
+        </EntityType>
+        <EntityType Name="Korisnik">
+          <Key>
+            <PropertyRef Name="Korisnik_Id" />
+          </Key>
+          <Property Name="Korisnik_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Prezime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Broj_Mobitela" Type="Int32" Nullable="false" />
+          <Property Name="Adresa" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Spol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Korisničko_Ime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Lozinka" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Ponovljena_Lozinka" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Uloga_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Uloga" Relationship="Self.FK_Korisnik_Uloga" FromRole="Korisnik" ToRole="Uloga" />
+          <NavigationProperty Name="Račun" Relationship="Self.FK_Račun_Korisnik" FromRole="Korisnik" ToRole="Račun" />
+          <NavigationProperty Name="Raspored_rada" Relationship="Self.FK_Raspored_rada_Korisnik" FromRole="Korisnik" ToRole="Raspored_rada" />
+          <NavigationProperty Name="Recenzije" Relationship="Self.FK_Recenzije_Korisnik" FromRole="Korisnik" ToRole="Recenzije" />
+        </EntityType>
+        <EntityType Name="Način_Plaćanja">
+          <Key>
+            <PropertyRef Name="Plaćanje_Id" />
+          </Key>
+          <Property Name="Plaćanje_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Vrsta_Plaćanja" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Narudžba" Relationship="Self.FK_Narudžba_Način_Plaćanja" FromRole="Način_Plaćanja" ToRole="Narudžba" />
+          <NavigationProperty Name="Račun" Relationship="Self.FK_Račun_Račun" FromRole="Način_Plaćanja" ToRole="Račun" />
+        </EntityType>
+        <EntityType Name="Narudžba">
+          <Key>
+            <PropertyRef Name="Narudžba_Id" />
+          </Key>
+          <Property Name="Narudžba_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Dobavljač_Id" Type="Int32" Nullable="false" />
+          <Property Name="Plaćanje_Id" Type="Int32" Nullable="false" />
+          <Property Name="Datum_Isporuke" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Grad_Id" Type="Int32" Nullable="false" />
+          <Property Name="Država_Id" Type="Int32" Nullable="false" />
+          <Property Name="Izvršena" Type="Boolean" Nullable="false" />
+          <Property Name="Ulica" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Dobavljač" Relationship="Self.FK_Narudžba_Dobavljač" FromRole="Narudžba" ToRole="Dobavljač" />
+          <NavigationProperty Name="Država" Relationship="Self.FK_Narudžba_Država" FromRole="Narudžba" ToRole="Država" />
+          <NavigationProperty Name="Grad" Relationship="Self.FK_Narudžba_Grad" FromRole="Narudžba" ToRole="Grad" />
+          <NavigationProperty Name="Način_Plaćanja" Relationship="Self.FK_Narudžba_Način_Plaćanja" FromRole="Narudžba" ToRole="Način_Plaćanja" />
+          <NavigationProperty Name="Narudžba_Dobavljač" Relationship="Self.FK__Narudžba___Narud__02084FDA" FromRole="Narudžba" ToRole="Narudžba_Dobavljač" />
+        </EntityType>
+        <EntityType Name="Narudžba_Dobavljač">
+          <Key>
+            <PropertyRef Name="Narudžba_Id" />
+            <PropertyRef Name="Piće_Id" />
+          </Key>
+          <Property Name="Narudžba_Id" Type="Int32" Nullable="false" />
+          <Property Name="Piće_Id" Type="Int32" Nullable="false" />
+          <Property Name="Količina" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Narudžba" Relationship="Self.FK__Narudžba___Narud__02084FDA" FromRole="Narudžba_Dobavljač" ToRole="Narudžba" />
+          <NavigationProperty Name="Pića" Relationship="Self.FK__Narudžba___Piće___02FC7413" FromRole="Narudžba_Dobavljač" ToRole="Pića" />
+        </EntityType>
+        <EntityType Name="Narudžba_Kupac">
+          <Key>
+            <PropertyRef Name="Račun_Id" />
+            <PropertyRef Name="Piće_Id" />
+          </Key>
+          <Property Name="Račun_Id" Type="Int32" Nullable="false" />
+          <Property Name="Piće_Id" Type="Int32" Nullable="false" />
+          <Property Name="Količina" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Pića" Relationship="Self.FK__Narudžba___Piće___7F2BE32F" FromRole="Narudžba_Kupac" ToRole="Pića" />
+          <NavigationProperty Name="Račun" Relationship="Self.FK__Narudžba___Račun__7E37BEF6" FromRole="Narudžba_Kupac" ToRole="Račun" />
+        </EntityType>
+        <EntityType Name="Pića">
+          <Key>
+            <PropertyRef Name="Piće_Id" />
+          </Key>
+          <Property Name="Piće_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv_Pića" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Postotak_Alkohola" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="VrstaPića_Id" Type="Int32" Nullable="false" />
+          <Property Name="Proizvođač_Id" Type="Int32" Nullable="false" />
+          <Property Name="Opis" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Slika" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Količina_Pića" Relationship="Self.FK__Količina___Piće___70DDC3D8" FromRole="Pića" ToRole="Količina_Pića" />
+          <NavigationProperty Name="Narudžba_Dobavljač" Relationship="Self.FK__Narudžba___Piće___02FC7413" FromRole="Pića" ToRole="Narudžba_Dobavljač" />
+          <NavigationProperty Name="Narudžba_Kupac" Relationship="Self.FK__Narudžba___Piće___7F2BE32F" FromRole="Pića" ToRole="Narudžba_Kupac" />
+          <NavigationProperty Name="Proizvođać" Relationship="Self.FK_Pića_Proizvođać" FromRole="Pića" ToRole="Proizvođać" />
+          <NavigationProperty Name="Vrsta_pića" Relationship="Self.FK_Pića_Vrsta_pića" FromRole="Pića" ToRole="Vrsta_pića" />
+        </EntityType>
+        <EntityType Name="Proizvođać">
+          <Key>
+            <PropertyRef Name="Proizvođać_Id" />
+          </Key>
+          <Property Name="Proizvođać_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv_Proizvođaća" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Pića" Relationship="Self.FK_Pića_Proizvođać" FromRole="Proizvođać" ToRole="Pića" />
+        </EntityType>
+        <EntityType Name="Račun">
+          <Key>
+            <PropertyRef Name="Račun_Id" />
+          </Key>
+          <Property Name="Račun_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Korisnik_Id" Type="Int32" Nullable="false" />
+          <Property Name="Ulica" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Grad_Id" Type="Int32" Nullable="false" />
+          <Property Name="Država_Id" Type="Int32" Nullable="false" />
+          <Property Name="Datum_Isporuke" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Izvršeno" Type="Boolean" Nullable="false" />
+          <Property Name="Plaćanje_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Država" Relationship="Self.FK_Račun_Država" FromRole="Račun" ToRole="Država" />
+          <NavigationProperty Name="Grad" Relationship="Self.FK_Račun_Grad" FromRole="Račun" ToRole="Grad" />
+          <NavigationProperty Name="Korisnik" Relationship="Self.FK_Račun_Korisnik" FromRole="Račun" ToRole="Korisnik" />
+          <NavigationProperty Name="Način_Plaćanja" Relationship="Self.FK_Račun_Račun" FromRole="Račun" ToRole="Način_Plaćanja" />
+          <NavigationProperty Name="Narudžba_Kupac" Relationship="Self.FK__Narudžba___Račun__7E37BEF6" FromRole="Račun" ToRole="Narudžba_Kupac" />
+        </EntityType>
+        <EntityType Name="Raspored_rada">
+          <Key>
+            <PropertyRef Name="Raspored_Id" />
+          </Key>
+          <Property Name="Raspored_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Datum" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="VrijemePočetka_Smjene" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="VrijemeZavršetka_Smjene" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="Korisnik_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Korisnik" Relationship="Self.FK_Raspored_rada_Korisnik" FromRole="Raspored_rada" ToRole="Korisnik" />
+        </EntityType>
+        <EntityType Name="Recenzije">
+          <Key>
+            <PropertyRef Name="Recenzije_Id" />
+          </Key>
+          <Property Name="Recenzije_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Komentar" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Ocjena" Type="Int32" Nullable="false" />
+          <Property Name="Korisnik_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Korisnik" Relationship="Self.FK_Recenzije_Korisnik" FromRole="Recenzije" ToRole="Korisnik" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Uloga">
+          <Key>
+            <PropertyRef Name="Uloga_Id" />
+          </Key>
+          <Property Name="Uloga_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv_Uloge" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Korisnik" Relationship="Self.FK_Korisnik_Uloga" FromRole="Uloga" ToRole="Korisnik" />
+        </EntityType>
+        <EntityType Name="Vrsta_pića">
+          <Key>
+            <PropertyRef Name="VrstaPića_Id" />
+          </Key>
+          <Property Name="VrstaPića_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv_Vrste" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Pića" Relationship="Self.FK_Pića_Vrsta_pića" FromRole="Vrsta_pića" ToRole="Pića" />
+        </EntityType>
+        <Association Name="FK_Dobavljač_Država">
+          <End Role="Država" Type="Self.Država" Multiplicity="1" />
+          <End Role="Dobavljač" Type="Self.Dobavljač" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Država">
+              <PropertyRef Name="Država_Id" />
+            </Principal>
+            <Dependent Role="Dobavljač">
+              <PropertyRef Name="Država_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Dobavljač_Grad">
+          <End Role="Grad" Type="Self.Grad" Multiplicity="1" />
+          <End Role="Dobavljač" Type="Self.Dobavljač" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grad">
+              <PropertyRef Name="Grad_Id" />
+            </Principal>
+            <Dependent Role="Dobavljač">
+              <PropertyRef Name="Grad_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Narudžba_Dobavljač">
+          <End Role="Dobavljač" Type="Self.Dobavljač" Multiplicity="1" />
+          <End Role="Narudžba" Type="Self.Narudžba" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dobavljač">
+              <PropertyRef Name="Dobavljač_Id" />
+            </Principal>
+            <Dependent Role="Narudžba">
+              <PropertyRef Name="Dobavljač_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Narudžba_Država">
+          <End Role="Država" Type="Self.Država" Multiplicity="1" />
+          <End Role="Narudžba" Type="Self.Narudžba" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Država">
+              <PropertyRef Name="Država_Id" />
+            </Principal>
+            <Dependent Role="Narudžba">
+              <PropertyRef Name="Država_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Račun_Država">
+          <End Role="Država" Type="Self.Država" Multiplicity="1" />
+          <End Role="Račun" Type="Self.Račun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Država">
+              <PropertyRef Name="Država_Id" />
+            </Principal>
+            <Dependent Role="Račun">
+              <PropertyRef Name="Država_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Narudžba_Grad">
+          <End Role="Grad" Type="Self.Grad" Multiplicity="1" />
+          <End Role="Narudžba" Type="Self.Narudžba" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grad">
+              <PropertyRef Name="Grad_Id" />
+            </Principal>
+            <Dependent Role="Narudžba">
+              <PropertyRef Name="Grad_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Račun_Grad">
+          <End Role="Grad" Type="Self.Grad" Multiplicity="1" />
+          <End Role="Račun" Type="Self.Račun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grad">
+              <PropertyRef Name="Grad_Id" />
+            </Principal>
+            <Dependent Role="Račun">
+              <PropertyRef Name="Grad_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Količina___Količ__6FE99F9F">
+          <End Role="Količina" Type="Self.Količina" Multiplicity="1" />
+          <End Role="Količina_Pića" Type="Self.Količina_Pića" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Količina">
+              <PropertyRef Name="Količina_Id" />
+            </Principal>
+            <Dependent Role="Količina_Pića">
+              <PropertyRef Name="Količina_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Količina___Piće___70DDC3D8">
+          <End Role="Pića" Type="Self.Pića" Multiplicity="1" />
+          <End Role="Količina_Pića" Type="Self.Količina_Pića" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pića">
+              <PropertyRef Name="Piće_Id" />
+            </Principal>
+            <Dependent Role="Količina_Pića">
+              <PropertyRef Name="Piće_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Korisnik_Uloga">
+          <End Role="Uloga" Type="Self.Uloga" Multiplicity="1" />
+          <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uloga">
+              <PropertyRef Name="Uloga_Id" />
+            </Principal>
+            <Dependent Role="Korisnik">
+              <PropertyRef Name="Uloga_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Račun_Korisnik">
+          <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="1" />
+          <End Role="Račun" Type="Self.Račun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Korisnik">
+              <PropertyRef Name="Korisnik_Id" />
+            </Principal>
+            <Dependent Role="Račun">
+              <PropertyRef Name="Korisnik_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Raspored_rada_Korisnik">
+          <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="1" />
+          <End Role="Raspored_rada" Type="Self.Raspored_rada" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Korisnik">
+              <PropertyRef Name="Korisnik_Id" />
+            </Principal>
+            <Dependent Role="Raspored_rada">
+              <PropertyRef Name="Korisnik_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Recenzije_Korisnik">
+          <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="1" />
+          <End Role="Recenzije" Type="Self.Recenzije" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Korisnik">
+              <PropertyRef Name="Korisnik_Id" />
+            </Principal>
+            <Dependent Role="Recenzije">
+              <PropertyRef Name="Korisnik_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Narudžba_Način_Plaćanja">
+          <End Role="Način_Plaćanja" Type="Self.Način_Plaćanja" Multiplicity="1" />
+          <End Role="Narudžba" Type="Self.Narudžba" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Način_Plaćanja">
+              <PropertyRef Name="Plaćanje_Id" />
+            </Principal>
+            <Dependent Role="Narudžba">
+              <PropertyRef Name="Plaćanje_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Račun_Račun">
+          <End Role="Način_Plaćanja" Type="Self.Način_Plaćanja" Multiplicity="1" />
+          <End Role="Račun" Type="Self.Račun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Način_Plaćanja">
+              <PropertyRef Name="Plaćanje_Id" />
+            </Principal>
+            <Dependent Role="Račun">
+              <PropertyRef Name="Plaćanje_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Narudžba___Narud__02084FDA">
+          <End Role="Narudžba" Type="Self.Narudžba" Multiplicity="1" />
+          <End Role="Narudžba_Dobavljač" Type="Self.Narudžba_Dobavljač" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Narudžba">
+              <PropertyRef Name="Narudžba_Id" />
+            </Principal>
+            <Dependent Role="Narudžba_Dobavljač">
+              <PropertyRef Name="Narudžba_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Narudžba___Piće___02FC7413">
+          <End Role="Pića" Type="Self.Pića" Multiplicity="1" />
+          <End Role="Narudžba_Dobavljač" Type="Self.Narudžba_Dobavljač" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pića">
+              <PropertyRef Name="Piće_Id" />
+            </Principal>
+            <Dependent Role="Narudžba_Dobavljač">
+              <PropertyRef Name="Piće_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Narudžba___Piće___7F2BE32F">
+          <End Role="Pića" Type="Self.Pića" Multiplicity="1" />
+          <End Role="Narudžba_Kupac" Type="Self.Narudžba_Kupac" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pića">
+              <PropertyRef Name="Piće_Id" />
+            </Principal>
+            <Dependent Role="Narudžba_Kupac">
+              <PropertyRef Name="Piće_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Narudžba___Račun__7E37BEF6">
+          <End Role="Račun" Type="Self.Račun" Multiplicity="1" />
+          <End Role="Narudžba_Kupac" Type="Self.Narudžba_Kupac" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Račun">
+              <PropertyRef Name="Račun_Id" />
+            </Principal>
+            <Dependent Role="Narudžba_Kupac">
+              <PropertyRef Name="Račun_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pića_Proizvođać">
+          <End Role="Proizvođać" Type="Self.Proizvođać" Multiplicity="1" />
+          <End Role="Pića" Type="Self.Pića" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proizvođać">
+              <PropertyRef Name="Proizvođać_Id" />
+            </Principal>
+            <Dependent Role="Pića">
+              <PropertyRef Name="Proizvođač_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pića_Vrsta_pića">
+          <End Role="Vrsta_pića" Type="Self.Vrsta_pića" Multiplicity="1" />
+          <End Role="Pića" Type="Self.Pića" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vrsta_pića">
+              <PropertyRef Name="VrstaPića_Id" />
+            </Principal>
+            <Dependent Role="Pića">
+              <PropertyRef Name="VrstaPića_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PI2257_DBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Dobavljač" EntityType="Self.Dobavljač" />
+          <EntitySet Name="Država" EntityType="Self.Država" />
+          <EntitySet Name="Grad" EntityType="Self.Grad" />
+          <EntitySet Name="Količina" EntityType="Self.Količina" />
+          <EntitySet Name="Količina_Pića" EntityType="Self.Količina_Pića" />
+          <EntitySet Name="Korisnik" EntityType="Self.Korisnik" />
+          <EntitySet Name="Način_Plaćanja" EntityType="Self.Način_Plaćanja" />
+          <EntitySet Name="Narudžba" EntityType="Self.Narudžba" />
+          <EntitySet Name="Narudžba_Dobavljač" EntityType="Self.Narudžba_Dobavljač" />
+          <EntitySet Name="Narudžba_Kupac" EntityType="Self.Narudžba_Kupac" />
+          <EntitySet Name="Pića" EntityType="Self.Pića" />
+          <EntitySet Name="Proizvođać" EntityType="Self.Proizvođać" />
+          <EntitySet Name="Račun" EntityType="Self.Račun" />
+          <EntitySet Name="Raspored_rada" EntityType="Self.Raspored_rada" />
+          <EntitySet Name="Recenzije" EntityType="Self.Recenzije" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Uloga" EntityType="Self.Uloga" />
+          <EntitySet Name="Vrsta_pića" EntityType="Self.Vrsta_pića" />
+          <AssociationSet Name="FK_Dobavljač_Država" Association="Self.FK_Dobavljač_Država">
+            <End Role="Država" EntitySet="Država" />
+            <End Role="Dobavljač" EntitySet="Dobavljač" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Dobavljač_Grad" Association="Self.FK_Dobavljač_Grad">
+            <End Role="Grad" EntitySet="Grad" />
+            <End Role="Dobavljač" EntitySet="Dobavljač" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Narudžba_Dobavljač" Association="Self.FK_Narudžba_Dobavljač">
+            <End Role="Dobavljač" EntitySet="Dobavljač" />
+            <End Role="Narudžba" EntitySet="Narudžba" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Narudžba_Država" Association="Self.FK_Narudžba_Država">
+            <End Role="Država" EntitySet="Država" />
+            <End Role="Narudžba" EntitySet="Narudžba" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Račun_Država" Association="Self.FK_Račun_Država">
+            <End Role="Država" EntitySet="Država" />
+            <End Role="Račun" EntitySet="Račun" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Narudžba_Grad" Association="Self.FK_Narudžba_Grad">
+            <End Role="Grad" EntitySet="Grad" />
+            <End Role="Narudžba" EntitySet="Narudžba" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Račun_Grad" Association="Self.FK_Račun_Grad">
+            <End Role="Grad" EntitySet="Grad" />
+            <End Role="Račun" EntitySet="Račun" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Količina___Količ__6FE99F9F" Association="Self.FK__Količina___Količ__6FE99F9F">
+            <End Role="Količina" EntitySet="Količina" />
+            <End Role="Količina_Pića" EntitySet="Količina_Pića" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Količina___Piće___70DDC3D8" Association="Self.FK__Količina___Piće___70DDC3D8">
+            <End Role="Pića" EntitySet="Pića" />
+            <End Role="Količina_Pića" EntitySet="Količina_Pića" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Korisnik_Uloga" Association="Self.FK_Korisnik_Uloga">
+            <End Role="Uloga" EntitySet="Uloga" />
+            <End Role="Korisnik" EntitySet="Korisnik" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Račun_Korisnik" Association="Self.FK_Račun_Korisnik">
+            <End Role="Korisnik" EntitySet="Korisnik" />
+            <End Role="Račun" EntitySet="Račun" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Raspored_rada_Korisnik" Association="Self.FK_Raspored_rada_Korisnik">
+            <End Role="Korisnik" EntitySet="Korisnik" />
+            <End Role="Raspored_rada" EntitySet="Raspored_rada" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Recenzije_Korisnik" Association="Self.FK_Recenzije_Korisnik">
+            <End Role="Korisnik" EntitySet="Korisnik" />
+            <End Role="Recenzije" EntitySet="Recenzije" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Narudžba_Način_Plaćanja" Association="Self.FK_Narudžba_Način_Plaćanja">
+            <End Role="Način_Plaćanja" EntitySet="Način_Plaćanja" />
+            <End Role="Narudžba" EntitySet="Narudžba" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Račun_Račun" Association="Self.FK_Račun_Račun">
+            <End Role="Način_Plaćanja" EntitySet="Način_Plaćanja" />
+            <End Role="Račun" EntitySet="Račun" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Narudžba___Narud__02084FDA" Association="Self.FK__Narudžba___Narud__02084FDA">
+            <End Role="Narudžba" EntitySet="Narudžba" />
+            <End Role="Narudžba_Dobavljač" EntitySet="Narudžba_Dobavljač" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Narudžba___Piće___02FC7413" Association="Self.FK__Narudžba___Piće___02FC7413">
+            <End Role="Pića" EntitySet="Pića" />
+            <End Role="Narudžba_Dobavljač" EntitySet="Narudžba_Dobavljač" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Narudžba___Piće___7F2BE32F" Association="Self.FK__Narudžba___Piće___7F2BE32F">
+            <End Role="Pića" EntitySet="Pića" />
+            <End Role="Narudžba_Kupac" EntitySet="Narudžba_Kupac" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Narudžba___Račun__7E37BEF6" Association="Self.FK__Narudžba___Račun__7E37BEF6">
+            <End Role="Račun" EntitySet="Račun" />
+            <End Role="Narudžba_Kupac" EntitySet="Narudžba_Kupac" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pića_Proizvođać" Association="Self.FK_Pića_Proizvođać">
+            <End Role="Proizvođać" EntitySet="Proizvođać" />
+            <End Role="Pića" EntitySet="Pića" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pića_Vrsta_pića" Association="Self.FK_Pića_Vrsta_pića">
+            <End Role="Vrsta_pića" EntitySet="Vrsta_pića" />
+            <End Role="Pića" EntitySet="Pića" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PI2257_DBModelStoreContainer" CdmEntityContainer="PI2257_DBEntities">
+          <EntitySetMapping Name="Dobavljač">
+            <EntityTypeMapping TypeName="PI2257_DBModel.Dobavljač">
+              <MappingFragment StoreEntitySet="Dobavljač">
+                <ScalarProperty Name="Dobavljač_Id" ColumnName="Dobavljač_Id" />
+                <ScalarProperty Name="Naziv_dobavljača" ColumnName="Naziv_dobavljača" />
+                <ScalarProperty Name="Ulica" ColumnName="Ulica" />
+                <ScalarProperty Name="Grad_Id" ColumnName="Grad_Id" />
+                <ScalarProperty Name="Država_Id" ColumnName="Država_Id" />
+                <ScalarProperty Name="Broj_Telefona" ColumnName="Broj_Telefona" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Logo" ColumnName="Logo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Država">
+            <EntityTypeMapping TypeName="PI2257_DBModel.Država">
+              <MappingFragment StoreEntitySet="Država">
+                <ScalarProperty Name="Država_Id" ColumnName="Država_Id" />
+                <ScalarProperty Name="Ime_Države" ColumnName="Ime_Države" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Grad">
+            <EntityTypeMapping TypeName="PI2257_DBModel.Grad">
+              <MappingFragment StoreEntitySet="Grad">
+                <ScalarProperty Name="Grad_Id" ColumnName="Grad_Id" />
+                <ScalarProperty Name="Ime_Grada" ColumnName="Ime_Grada" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Količina">
+            <EntityTypeMapping TypeName="PI2257_DBModel.Količina">
+              <MappingFragment StoreEntitySet="Količina">
+                <ScalarProperty Name="Količina_Id" ColumnName="Količina_Id" />
+                <ScalarProperty Name="Količina1" ColumnName="Količina" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Količina_Pića">
+            <EntityTypeMapping TypeName="PI2257_DBModel.Količina_Pića">
+              <MappingFragment StoreEntitySet="Količina_Pića">
+                <ScalarProperty Name="Količina_Id" ColumnName="Količina_Id" />
+                <ScalarProperty Name="Piće_Id" ColumnName="Piće_Id" />
+                <ScalarProperty Name="Cijena" ColumnName="Cijena" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Korisnik">
+            <EntityTypeMapping TypeName="PI2257_DBModel.Korisnik">
+              <MappingFragment StoreEntitySet="Korisnik">
+                <ScalarProperty Name="Korisnik_Id" ColumnName="Korisnik_Id" />
+                <ScalarProperty Name="Ime" ColumnName="Ime" />
+                <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Broj_Mobitela" ColumnName="Broj_Mobitela" />
+                <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+                <ScalarProperty Name="Spol" ColumnName="Spol" />
+                <ScalarProperty Name="Korisničko_Ime" ColumnName="Korisničko_Ime" />
+                <ScalarProperty Name="Lozinka" ColumnName="Lozinka" />
+                <ScalarProperty Name="Ponovljena_Lozinka" ColumnName="Ponovljena_Lozinka" />
+                <ScalarProperty Name="Uloga_Id" ColumnName="Uloga_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Način_Plaćanja">
+            <EntityTypeMapping TypeName="PI2257_DBModel.Način_Plaćanja">
+              <MappingFragment StoreEntitySet="Način Plaćanja">
+                <ScalarProperty Name="Plaćanje_Id" ColumnName="Plaćanje_Id" />
+                <ScalarProperty Name="Vrsta_Plaćanja" ColumnName="Vrsta_Plaćanja" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Narudžba">
+            <EntityTypeMapping TypeName="PI2257_DBModel.Narudžba">
+              <MappingFragment StoreEntitySet="Narudžba">
+                <ScalarProperty Name="Narudžba_Id" ColumnName="Narudžba_Id" />
+                <ScalarProperty Name="Dobavljač_Id" ColumnName="Dobavljač_Id" />
+                <ScalarProperty Name="Plaćanje_Id" ColumnName="Plaćanje_Id" />
+                <ScalarProperty Name="Datum_Isporuke" ColumnName="Datum_Isporuke" />
+                <ScalarProperty Name="Grad_Id" ColumnName="Grad_Id" />
+                <ScalarProperty Name="Država_Id" ColumnName="Država_Id" />
+                <ScalarProperty Name="Izvršena" ColumnName="Izvršena" />
+                <ScalarProperty Name="Ulica" ColumnName="Ulica" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Narudžba_Dobavljač">
+            <EntityTypeMapping TypeName="PI2257_DBModel.Narudžba_Dobavljač">
+              <MappingFragment StoreEntitySet="Narudžba_Dobavljač">
+                <ScalarProperty Name="Narudžba_Id" ColumnName="Narudžba_Id" />
+                <ScalarProperty Name="Piće_Id" ColumnName="Piće_Id" />
+                <ScalarProperty Name="Količina" ColumnName="Količina" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Narudžba_Kupac">
+            <EntityTypeMapping TypeName="PI2257_DBModel.Narudžba_Kupac">
+              <MappingFragment StoreEntitySet="Narudžba_Kupac">
+                <ScalarProperty Name="Račun_Id" ColumnName="Račun_Id" />
+                <ScalarProperty Name="Piće_Id" ColumnName="Piće_Id" />
+                <ScalarProperty Name="Količina" ColumnName="Količina" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pića">
+            <EntityTypeMapping TypeName="PI2257_DBModel.Pića">
+              <MappingFragment StoreEntitySet="Pića">
+                <ScalarProperty Name="Piće_Id" ColumnName="Piće_Id" />
+                <ScalarProperty Name="Naziv_Pića" ColumnName="Naziv_Pića" />
+                <ScalarProperty Name="Postotak_Alkohola" ColumnName="Postotak_Alkohola" />
+                <ScalarProperty Name="VrstaPića_Id" ColumnName="VrstaPića_Id" />
+                <ScalarProperty Name="Proizvođač_Id" ColumnName="Proizvođač_Id" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+                <ScalarProperty Name="Slika" ColumnName="Slika" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Proizvođać">
+            <EntityTypeMapping TypeName="PI2257_DBModel.Proizvođać">
+              <MappingFragment StoreEntitySet="Proizvođać">
+                <ScalarProperty Name="Proizvođać_Id" ColumnName="Proizvođać_Id" />
+                <ScalarProperty Name="Naziv_Proizvođaća" ColumnName="Naziv_Proizvođaća" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Račun">
+            <EntityTypeMapping TypeName="PI2257_DBModel.Račun">
+              <MappingFragment StoreEntitySet="Račun">
+                <ScalarProperty Name="Račun_Id" ColumnName="Račun_Id" />
+                <ScalarProperty Name="Korisnik_Id" ColumnName="Korisnik_Id" />
+                <ScalarProperty Name="Ulica" ColumnName="Ulica" />
+                <ScalarProperty Name="Grad_Id" ColumnName="Grad_Id" />
+                <ScalarProperty Name="Država_Id" ColumnName="Država_Id" />
+                <ScalarProperty Name="Datum_Isporuke" ColumnName="Datum_Isporuke" />
+                <ScalarProperty Name="Izvršeno" ColumnName="Izvršeno" />
+                <ScalarProperty Name="Plaćanje_Id" ColumnName="Plaćanje_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Raspored_rada">
+            <EntityTypeMapping TypeName="PI2257_DBModel.Raspored_rada">
+              <MappingFragment StoreEntitySet="Raspored rada">
+                <ScalarProperty Name="Raspored_Id" ColumnName="Raspored_Id" />
+                <ScalarProperty Name="Datum" ColumnName="Datum" />
+                <ScalarProperty Name="VrijemePočetka_Smjene" ColumnName="VrijemePočetka_Smjene" />
+                <ScalarProperty Name="VrijemeZavršetka_Smjene" ColumnName="VrijemeZavršetka_Smjene" />
+                <ScalarProperty Name="Korisnik_Id" ColumnName="Korisnik_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Recenzije">
+            <EntityTypeMapping TypeName="PI2257_DBModel.Recenzije">
+              <MappingFragment StoreEntitySet="Recenzije">
+                <ScalarProperty Name="Recenzije_Id" ColumnName="Recenzije_Id" />
+                <ScalarProperty Name="Komentar" ColumnName="Komentar" />
+                <ScalarProperty Name="Ocjena" ColumnName="Ocjena" />
+                <ScalarProperty Name="Korisnik_Id" ColumnName="Korisnik_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="PI2257_DBModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Uloga">
+            <EntityTypeMapping TypeName="PI2257_DBModel.Uloga">
+              <MappingFragment StoreEntitySet="Uloga">
+                <ScalarProperty Name="Uloga_Id" ColumnName="Uloga_Id" />
+                <ScalarProperty Name="Naziv_Uloge" ColumnName="Naziv_Uloge" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vrsta_pića">
+            <EntityTypeMapping TypeName="PI2257_DBModel.Vrsta_pića">
+              <MappingFragment StoreEntitySet="Vrsta pića">
+                <ScalarProperty Name="VrstaPića_Id" ColumnName="VrstaPića_Id" />
+                <ScalarProperty Name="Naziv_Vrste" ColumnName="Naziv_Vrste" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
