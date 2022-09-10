@@ -27,9 +27,9 @@ namespace Validacija
                 Poruka += "Pogrešan format e-maila.E-mail mora biti formata korisničkoime@nazivdomene.ekstenzija!!!\n";
                 
             }
-            if (PodatakKorisnika[3].Length == 0 && PodatakKorisnika[3].Length<9 && PodatakKorisnika[3].Length>14)
+            if (PodatakKorisnika[3].Length == 0 || PodatakKorisnika[3].Length<9 || PodatakKorisnika[3].Length>12)
             {
-                Poruka += "Neispravan broj mobitela.Broj mobitela mora sadržavati između 10 i 13 znamenki!!!\n";
+                Poruka += "Neispravan broj mobitela.Broj mobitela mora sadržavati između 10 i 11 znamenki!!!\n";
             }
             if (PodatakKorisnika[4].Length == 0)
             {

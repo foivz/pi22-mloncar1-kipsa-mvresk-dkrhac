@@ -30,7 +30,7 @@
         {
             this.panelDrag = new System.Windows.Forms.Panel();
             this.labelPretraživanje = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxIzlaz = new System.Windows.Forms.PictureBox();
             this.textBoxCijena = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.labelIzlaz = new System.Windows.Forms.Label();
@@ -42,10 +42,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxPretraživanje = new System.Windows.Forms.TextBox();
             this.buttonIzbriši = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonAžuriraj = new System.Windows.Forms.Button();
             this.buttonDodaj = new System.Windows.Forms.Button();
             this.dataGridViewPića = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBoxOpis = new System.Windows.Forms.TextBox();
             this.textBoxProizvođać = new System.Windows.Forms.TextBox();
             this.textBoxVrstaPića = new System.Windows.Forms.TextBox();
@@ -54,15 +53,14 @@
             this.labelPočetnaStranica = new System.Windows.Forms.Label();
             this.textBoxNaziv = new System.Windows.Forms.TextBox();
             this.panelDrag.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIzlaz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPića)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelDrag
             // 
             this.panelDrag.Controls.Add(this.labelPretraživanje);
-            this.panelDrag.Controls.Add(this.pictureBox2);
+            this.panelDrag.Controls.Add(this.pictureBoxIzlaz);
             this.panelDrag.Controls.Add(this.textBoxCijena);
             this.panelDrag.Controls.Add(this.label7);
             this.panelDrag.Controls.Add(this.labelIzlaz);
@@ -74,10 +72,9 @@
             this.panelDrag.Controls.Add(this.label1);
             this.panelDrag.Controls.Add(this.textBoxPretraživanje);
             this.panelDrag.Controls.Add(this.buttonIzbriši);
-            this.panelDrag.Controls.Add(this.button1);
+            this.panelDrag.Controls.Add(this.buttonAžuriraj);
             this.panelDrag.Controls.Add(this.buttonDodaj);
             this.panelDrag.Controls.Add(this.dataGridViewPića);
-            this.panelDrag.Controls.Add(this.pictureBox1);
             this.panelDrag.Controls.Add(this.textBoxOpis);
             this.panelDrag.Controls.Add(this.textBoxProizvođać);
             this.panelDrag.Controls.Add(this.textBoxVrstaPića);
@@ -87,7 +84,7 @@
             this.panelDrag.Controls.Add(this.textBoxNaziv);
             this.panelDrag.Location = new System.Drawing.Point(-2, -2);
             this.panelDrag.Name = "panelDrag";
-            this.panelDrag.Size = new System.Drawing.Size(1523, 1122);
+            this.panelDrag.Size = new System.Drawing.Size(1577, 1114);
             this.panelDrag.TabIndex = 0;
             this.panelDrag.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDrag_Paint);
             this.panelDrag.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelDrag_MouseDown);
@@ -105,17 +102,17 @@
             this.labelPretraživanje.TabIndex = 29;
             this.labelPretraživanje.Text = "Pretraživanje";
             // 
-            // pictureBox2
+            // pictureBoxIzlaz
             // 
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = global::Registracija_i_Prijava.Properties.Resources.homepage;
-            this.pictureBox2.Location = new System.Drawing.Point(972, 1070);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(41, 24);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 28;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.pictureBoxIzlaz.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxIzlaz.Image = global::Registracija_i_Prijava.Properties.Resources.homepage;
+            this.pictureBoxIzlaz.Location = new System.Drawing.Point(972, 1070);
+            this.pictureBoxIzlaz.Name = "pictureBoxIzlaz";
+            this.pictureBoxIzlaz.Size = new System.Drawing.Size(41, 24);
+            this.pictureBoxIzlaz.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxIzlaz.TabIndex = 28;
+            this.pictureBoxIzlaz.TabStop = false;
+            this.pictureBoxIzlaz.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // textBoxCijena
             // 
@@ -123,7 +120,7 @@
             this.textBoxCijena.Location = new System.Drawing.Point(350, 491);
             this.textBoxCijena.Multiline = true;
             this.textBoxCijena.Name = "textBoxCijena";
-            this.textBoxCijena.Size = new System.Drawing.Size(246, 38);
+            this.textBoxCijena.Size = new System.Drawing.Size(456, 38);
             this.textBoxCijena.TabIndex = 27;
             this.textBoxCijena.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -149,13 +146,15 @@
             this.labelIzlaz.TabIndex = 25;
             this.labelIzlaz.Text = "Vrati se na početnu stranicu ";
             this.labelIzlaz.Click += new System.EventHandler(this.labelIzlaz_Click);
+            this.labelIzlaz.MouseLeave += new System.EventHandler(this.labelIzlaz_MouseLeave);
+            this.labelIzlaz.MouseHover += new System.EventHandler(this.labelIzlaz_MouseHover);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Elephant", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label6.Location = new System.Drawing.Point(795, 115);
+            this.label6.Location = new System.Drawing.Point(1119, 125);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(87, 37);
             this.label6.TabIndex = 24;
@@ -218,7 +217,7 @@
             // 
             // textBoxPretraživanje
             // 
-            this.textBoxPretraživanje.Location = new System.Drawing.Point(1193, 999);
+            this.textBoxPretraživanje.Location = new System.Drawing.Point(1224, 999);
             this.textBoxPretraživanje.Multiline = true;
             this.textBoxPretraživanje.Name = "textBoxPretraživanje";
             this.textBoxPretraživanje.Size = new System.Drawing.Size(246, 38);
@@ -238,20 +237,24 @@
             this.buttonIzbriši.Text = "Izbriši";
             this.buttonIzbriši.UseVisualStyleBackColor = false;
             this.buttonIzbriši.Click += new System.EventHandler(this.buttonIzbriši_Click);
+            this.buttonIzbriši.MouseLeave += new System.EventHandler(this.buttonIzbriši_MouseLeave);
+            this.buttonIzbriši.MouseHover += new System.EventHandler(this.buttonIzbriši_MouseHover);
             // 
-            // button1
+            // buttonAžuriraj
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(374, 984);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(246, 64);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Ažuriraj";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonAžuriraj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.buttonAžuriraj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonAžuriraj.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAžuriraj.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonAžuriraj.Location = new System.Drawing.Point(374, 984);
+            this.buttonAžuriraj.Name = "buttonAžuriraj";
+            this.buttonAžuriraj.Size = new System.Drawing.Size(246, 64);
+            this.buttonAžuriraj.TabIndex = 15;
+            this.buttonAžuriraj.Text = "Ažuriraj";
+            this.buttonAžuriraj.UseVisualStyleBackColor = false;
+            this.buttonAžuriraj.Click += new System.EventHandler(this.button1_Click);
+            this.buttonAžuriraj.MouseLeave += new System.EventHandler(this.buttonAžuriraj_MouseLeave);
+            this.buttonAžuriraj.MouseHover += new System.EventHandler(this.buttonAžuriraj_MouseHover);
             // 
             // buttonDodaj
             // 
@@ -266,6 +269,8 @@
             this.buttonDodaj.Text = "Dodaj";
             this.buttonDodaj.UseVisualStyleBackColor = false;
             this.buttonDodaj.Click += new System.EventHandler(this.buttonDodaj_Click);
+            this.buttonDodaj.MouseLeave += new System.EventHandler(this.buttonDodaj_MouseLeave);
+            this.buttonDodaj.MouseHover += new System.EventHandler(this.buttonDodaj_MouseHover);
             // 
             // dataGridViewPića
             // 
@@ -278,20 +283,13 @@
             this.dataGridViewPića.TabIndex = 13;
             this.dataGridViewPića.SelectionChanged += new System.EventHandler(this.dataGridViewPića_SelectionChanged);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(1164, 173);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(345, 290);
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
-            // 
             // textBoxOpis
             // 
             this.textBoxOpis.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxOpis.Location = new System.Drawing.Point(668, 173);
+            this.textBoxOpis.Location = new System.Drawing.Point(988, 207);
             this.textBoxOpis.Multiline = true;
             this.textBoxOpis.Name = "textBoxOpis";
+            this.textBoxOpis.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBoxOpis.Size = new System.Drawing.Size(345, 290);
             this.textBoxOpis.TabIndex = 11;
             this.textBoxOpis.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -302,7 +300,7 @@
             this.textBoxProizvođać.Location = new System.Drawing.Point(350, 425);
             this.textBoxProizvođać.Multiline = true;
             this.textBoxProizvođać.Name = "textBoxProizvođać";
-            this.textBoxProizvođać.Size = new System.Drawing.Size(246, 38);
+            this.textBoxProizvođać.Size = new System.Drawing.Size(456, 38);
             this.textBoxProizvođać.TabIndex = 10;
             this.textBoxProizvođać.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -312,7 +310,7 @@
             this.textBoxVrstaPića.Location = new System.Drawing.Point(350, 355);
             this.textBoxVrstaPića.Multiline = true;
             this.textBoxVrstaPića.Name = "textBoxVrstaPića";
-            this.textBoxVrstaPića.Size = new System.Drawing.Size(246, 38);
+            this.textBoxVrstaPića.Size = new System.Drawing.Size(456, 38);
             this.textBoxVrstaPića.TabIndex = 9;
             this.textBoxVrstaPića.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -322,7 +320,7 @@
             this.textBoxPostotakAlkohola.Location = new System.Drawing.Point(350, 280);
             this.textBoxPostotakAlkohola.Multiline = true;
             this.textBoxPostotakAlkohola.Name = "textBoxPostotakAlkohola";
-            this.textBoxPostotakAlkohola.Size = new System.Drawing.Size(246, 38);
+            this.textBoxPostotakAlkohola.Size = new System.Drawing.Size(456, 38);
             this.textBoxPostotakAlkohola.TabIndex = 8;
             this.textBoxPostotakAlkohola.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -332,7 +330,7 @@
             this.textBoxKoličina.Location = new System.Drawing.Point(350, 207);
             this.textBoxKoličina.Multiline = true;
             this.textBoxKoličina.Name = "textBoxKoličina";
-            this.textBoxKoličina.Size = new System.Drawing.Size(246, 38);
+            this.textBoxKoličina.Size = new System.Drawing.Size(456, 38);
             this.textBoxKoličina.TabIndex = 7;
             this.textBoxKoličina.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -353,7 +351,7 @@
             this.textBoxNaziv.Location = new System.Drawing.Point(350, 126);
             this.textBoxNaziv.Multiline = true;
             this.textBoxNaziv.Name = "textBoxNaziv";
-            this.textBoxNaziv.Size = new System.Drawing.Size(246, 38);
+            this.textBoxNaziv.Size = new System.Drawing.Size(456, 38);
             this.textBoxNaziv.TabIndex = 0;
             this.textBoxNaziv.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -362,16 +360,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1576, 1099);
+            this.ClientSize = new System.Drawing.Size(1576, 1102);
             this.Controls.Add(this.panelDrag);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Name = "Pregled_pića";
             this.Text = "Pregled_pića";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Pregled_pića_KeyDown);
             this.panelDrag.ResumeLayout(false);
             this.panelDrag.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIzlaz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPića)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -383,7 +382,6 @@
         private System.Windows.Forms.TextBox textBoxKoličina;
         private System.Windows.Forms.Label labelPočetnaStranica;
         private System.Windows.Forms.DataGridView dataGridViewPića;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textBoxOpis;
         private System.Windows.Forms.TextBox textBoxProizvođać;
         private System.Windows.Forms.TextBox textBoxVrstaPića;
@@ -396,12 +394,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxPretraživanje;
         private System.Windows.Forms.Button buttonIzbriši;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonAžuriraj;
         private System.Windows.Forms.Button buttonDodaj;
         private System.Windows.Forms.Label labelIzlaz;
         private System.Windows.Forms.TextBox textBoxCijena;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBoxIzlaz;
         private System.Windows.Forms.Label labelPretraživanje;
     }
 }

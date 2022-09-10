@@ -17,7 +17,10 @@ namespace ClassLibrary1
         public int Račun_Id { get; set; }
         public int Piće_Id { get; set; }
         public int Količina { get; set; }
+        public string Naručeno { get; set; }
+        public int Količina_Id { get; set; }
     
+        public virtual Količina Količina1 { get; set; }
         public virtual Pića Pića { get; set; }
         public virtual Račun Račun { get; set; }
     }

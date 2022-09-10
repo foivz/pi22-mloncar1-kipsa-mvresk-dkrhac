@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Validacija;
+using UserHelp;
 
 namespace Registracija_i_Prijava
 {
@@ -16,17 +17,18 @@ namespace Registracija_i_Prijava
     {
         bool mouseDown;
         private Point offset;
-        string Korisničko;
+    
         public Registracija()
         {
             InitializeComponent();
             DohvatiKorisnika();
+            this.KeyPreview = true;
         }
 
         private Korisnik DohvatiKorisnika()
         {
             
-            using (var context = new PI2257_DBEntities3())
+            using (var context = new ModelPodataka())
             {
                 var query = from p in context.Korisnik
                             where p.Korisničko_Ime==textBoxKorisničkoIme.Text
@@ -57,10 +59,7 @@ namespace Registracija_i_Prijava
             mouseDown = false;
         }
 
-        private void panelDrag_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
+       
 
         private void labelOdustani_MouseHover(object sender, EventArgs e)
         {
@@ -172,14 +171,14 @@ namespace Registracija_i_Prijava
             }
             else
             {
-                using (var context = new PI2257_DBEntities3())
+                using (var context = new ModelPodataka())
                 {
                     Korisnik novo = new Korisnik()
                     {
-                        Ime =textBoxIme.Text,
-                        Prezime =textBoxPrezime.Text,
-                        Email =textBoxEmail.Text,
-                        Broj_Mobitela=int.Parse(textBoxBrojMobitela.Text),
+                        Ime = textBoxIme.Text,
+                        Prezime = textBoxPrezime.Text,
+                        Email = textBoxEmail.Text,
+                        Broj_Mobitela= (int)Convert.ToInt64(textBoxBrojMobitela.Text),  
                         Adresa =textBoxAdresa.Text,
                         Spol=textBoxSpol.Text,
                         Korisničko_Ime=textBoxKorisničkoIme.Text,
@@ -198,6 +197,21 @@ namespace Registracija_i_Prijava
 
                 }
 
+            }
+        }
+
+        private void textBoxAdresa_Click_1(object sender, EventArgs e)
+        {
+            textBoxAdresa.Text = "";
+        }
+
+        private void Registracija_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                
+                UserHelpp help = new UserHelpp();
+                help.OtvoriUserHelp(this, "Registracija.htm");
             }
         }
     }

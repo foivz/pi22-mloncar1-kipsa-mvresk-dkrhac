@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ClassLibrary1;
+using Registracija_i_Prijava.Forme;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UserHelp;
+
 
 namespace Registracija_i_Prijava
 {
@@ -14,15 +18,27 @@ namespace Registracija_i_Prijava
     {
         public Prijava()
         {
+            this.KeyPreview = true;
             InitializeComponent();
-          
+            DohvatiKorisnika();
            
 
         }
+        
 
-      
+        private Korisnik DohvatiKorisnika()
+        {
 
-       
+            using (var context = new ModelPodataka())
+            {
+                var query = from p in context.Korisnik
+                            where p.Korisničko_Ime == textBoxKorisničkoIme.Text && p.Lozinka == textBoxLozinka.Text
+                            select p;
+
+                return query.FirstOrDefault();
+            }
+        }
+
         private void buttonPrijaviSe_MouseHover(object sender, EventArgs e)
         {
             buttonPrijaviSe.ForeColor = Color.Blue;
@@ -107,10 +123,47 @@ namespace Registracija_i_Prijava
 
         private void buttonPrijaviSe_Click(object sender, EventArgs e)
         {
-            Forme.PočetnaStranica početna = new Forme.PočetnaStranica();
+            if(DohvatiKorisnika() != null) {
+                string email = DohvatiKorisnika().Email;
+                
+                PočetnaStranica početna = new PočetnaStranica(email);
             Hide();
             početna.ShowDialog();
+            Close(); }
+            else
+            {
+                MessageBox.Show("Ne postoji korisnik s navedenim podacima!!!");
+            }
+        }
+
+        private void labelZaboravljenaLozinka_Click(object sender, EventArgs e)
+        {
+            ZaboravljenaLozinka zaboravljenaLozinka = new ZaboravljenaLozinka();
+            Hide();
+            zaboravljenaLozinka.ShowDialog();
             Close();
+        }
+
+        private void labelZaboravljenaLozinka_MouseHover(object sender, EventArgs e)
+        {
+            labelZaboravljenaLozinka.ForeColor = Color.Blue;
+        }
+
+        private void labelZaboravljenaLozinka_MouseLeave(object sender, EventArgs e)
+        {
+            labelZaboravljenaLozinka.ForeColor = Color.Black;
+        }
+
+       
+
+        private void Prijava_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                
+                UserHelpp help = new UserHelpp();
+                help.OtvoriUserHelp(this, "Prijava.htm");
+            }
         }
     }
 }

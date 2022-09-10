@@ -54,7 +54,6 @@
             this.pictureBoxGlavna = new System.Windows.Forms.PictureBox();
             this.pictureBoxRasporedRadaGlavna = new System.Windows.Forms.PictureBox();
             this.labelPočetnaStranica = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.panelDrag.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNaručiPiće)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPregledDobavljača)).BeginInit();
@@ -76,7 +75,6 @@
             // 
             // panelDrag
             // 
-            this.panelDrag.Controls.Add(this.label1);
             this.panelDrag.Controls.Add(this.textBoxPregledNarudžbi);
             this.panelDrag.Controls.Add(this.pictureBoxNaručiPiće);
             this.panelDrag.Controls.Add(this.textBoxPregledDobavljača);
@@ -104,7 +102,7 @@
             this.panelDrag.Controls.Add(this.labelPočetnaStranica);
             this.panelDrag.Location = new System.Drawing.Point(-2, -1);
             this.panelDrag.Name = "panelDrag";
-            this.panelDrag.Size = new System.Drawing.Size(1555, 1078);
+            this.panelDrag.Size = new System.Drawing.Size(1589, 983);
             this.panelDrag.TabIndex = 0;
             this.panelDrag.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelDrag_MouseDown);
             this.panelDrag.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelDrag_MouseMove);
@@ -136,6 +134,7 @@
             this.pictureBoxNaručiPiće.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxNaručiPiće.TabIndex = 28;
             this.pictureBoxNaručiPiće.TabStop = false;
+            this.pictureBoxNaručiPiće.Click += new System.EventHandler(this.pictureBoxNaručiPiće_Click);
             // 
             // textBoxPregledDobavljača
             // 
@@ -330,6 +329,7 @@
             this.pictureBoxNaručiPićeGlavna.Size = new System.Drawing.Size(248, 227);
             this.pictureBoxNaručiPićeGlavna.TabIndex = 13;
             this.pictureBoxNaručiPićeGlavna.TabStop = false;
+            this.pictureBoxNaručiPićeGlavna.Click += new System.EventHandler(this.pictureBoxNaručiPićeGlavna_Click);
             // 
             // pictureBoxPregledPićaGlavna
             // 
@@ -423,27 +423,17 @@
             this.labelPočetnaStranica.TabIndex = 5;
             this.labelPočetnaStranica.Text = "Početna Stranica";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bauhaus 93", 40.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(22, 810);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(341, 76);
-            this.label1.TabIndex = 30;
-            this.label1.Text = "Recenzije";
-            // 
             // PočetnaStranica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1500, 1100);
+            this.ClientSize = new System.Drawing.Size(1470, 817);
             this.Controls.Add(this.panelDrag);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PočetnaStranica";
             this.Text = "PočetnaStranica";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PočetnaStranica_KeyDown);
             this.panelDrag.ResumeLayout(false);
             this.panelDrag.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNaručiPiće)).EndInit();
@@ -494,6 +484,5 @@
         private System.Windows.Forms.PictureBox pictureBoxNaručiPiće;
         private System.Windows.Forms.TextBox textBoxPregledDobavljača;
         private System.Windows.Forms.TextBox textBoxPregledNarudžbi;
-        private System.Windows.Forms.Label label1;
     }
 }

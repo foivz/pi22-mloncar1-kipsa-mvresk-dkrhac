@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UserHelp; 
 
 namespace Registracija_i_Prijava.Forme
 {
@@ -14,9 +15,11 @@ namespace Registracija_i_Prijava.Forme
     {
         bool mouseDown;
         private Point offset;
-        public PočetnaStranica()
+        public string email;
+        public PočetnaStranica(string Email)
         {
             InitializeComponent();
+            this.KeyPreview = true;
             textBoxPregledPića.Enabled = false;
             textBoxNaručiPiće.Enabled = false;
             textBoxPregledDobavljača.Enabled = false;
@@ -25,7 +28,9 @@ namespace Registracija_i_Prijava.Forme
             textBoxStatistika.Enabled = false;
             textBoxRecenzije.Enabled = false;   
             textBoxOdjava.Enabled = false;
+            email = Email;
             
+
         }
 
         private void panelDrag_MouseDown(object sender, MouseEventArgs e)
@@ -49,13 +54,7 @@ namespace Registracija_i_Prijava.Forme
             mouseDown = false;
         }
 
-        private void pictureBoxOdjava_Click(object sender, EventArgs e)
-        {
-            Prijava prijava =new Prijava();
-            Hide();
-            prijava.ShowDialog();
-            Close();
-        }
+        
 
         private void pictureBoxOdjavaGlavna_Click(object sender, EventArgs e)
         {
@@ -65,7 +64,7 @@ namespace Registracija_i_Prijava.Forme
             Close ();
         }
 
-        private void pictureBoxOdjava_Click_1(object sender, EventArgs e)
+       private void pictureBoxOdjava_Click_1(object sender, EventArgs e)
         {
             Prijava prijava = new Prijava();
             Hide();
@@ -75,7 +74,7 @@ namespace Registracija_i_Prijava.Forme
 
         private void pictureBoxPregledPića_Click(object sender, EventArgs e)
         {
-            Forme.Pregled_pića pregledPića = new Forme.Pregled_pića();
+            Pregled_pića pregledPića = new Pregled_pića(email);
             Hide();
             pregledPića.ShowDialog();
             Close();
@@ -83,10 +82,36 @@ namespace Registracija_i_Prijava.Forme
 
         private void pictureBoxPregledPićaGlavna_Click(object sender, EventArgs e)
         {
-            Forme.Pregled_pića pregledPića = new Forme.Pregled_pića();
+            Pregled_pića pregledPića = new Pregled_pića(email);
             Hide();
             pregledPića.ShowDialog();
             Close();
+        }
+
+        private void PočetnaStranica_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                UserHelpp help = new UserHelpp();
+                help.OtvoriUserHelp(this, "PočetnaStranica.htm");
+            }
+        }
+
+        private void pictureBoxNaručiPićeGlavna_Click(object sender, EventArgs e)
+        {
+            NaručiPića naručiPića=new NaručiPića(email);
+            Hide();
+            naručiPića.ShowDialog();
+            Close();
+        }
+
+        private void pictureBoxNaručiPiće_Click(object sender, EventArgs e)
+        {
+            NaručiPića naručiPića = new NaručiPića(email);
+            Hide();
+            naručiPića.ShowDialog();
+            Close();
+
         }
     }
 }

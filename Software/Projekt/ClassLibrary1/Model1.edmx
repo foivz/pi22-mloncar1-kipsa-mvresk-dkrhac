@@ -101,6 +101,8 @@
           <Property Name="Račun_Id" Type="int" Nullable="false" />
           <Property Name="Piće_Id" Type="int" Nullable="false" />
           <Property Name="Količina" Type="int" Nullable="false" />
+          <Property Name="Naručeno" Type="varchar" MaxLength="50" />
+          <Property Name="Količina_Id" Type="int" />
         </EntityType>
         <EntityType Name="Pića">
           <Key>
@@ -320,6 +322,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Narudžba_Kupac_Količina">
+          <End Role="Količina" Type="Self.Količina" Multiplicity="0..1" />
+          <End Role="Narudžba_Kupac" Type="Self.Narudžba_Kupac" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Količina">
+              <PropertyRef Name="Količina_Id" />
+            </Principal>
+            <Dependent Role="Narudžba_Kupac">
+              <PropertyRef Name="Količina_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Narudžba_Način Plaćanja">
           <End Role="Način_Plaćanja" Type="Self.Način_Plaćanja" Multiplicity="1" />
           <End Role="Narudžba" Type="Self.Narudžba" Multiplicity="*" />
@@ -495,6 +509,10 @@
             <End Role="Grad" EntitySet="Grad" />
             <End Role="Narudžba" EntitySet="Narudžba" />
           </AssociationSet>
+          <AssociationSet Name="FK_Narudžba_Kupac_Količina" Association="Self.FK_Narudžba_Kupac_Količina">
+            <End Role="Količina" EntitySet="Količina" />
+            <End Role="Narudžba_Kupac" EntitySet="Narudžba_Kupac" />
+          </AssociationSet>
           <AssociationSet Name="FK_Narudžba_Način Plaćanja" Association="Self.FK_Narudžba_Način Plaćanja">
             <End Role="Način_Plaćanja" EntitySet="Način_Plaćanja" />
             <End Role="Narudžba" EntitySet="Narudžba" />
@@ -580,6 +598,7 @@
           <Property Name="Količina_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Količina1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Količina_Pića" Relationship="Self.FK__Količina___Količ__6FE99F9F" FromRole="Količina" ToRole="Količina_Pića" />
+          <NavigationProperty Name="Narudžba_Kupac" Relationship="Self.FK_Narudžba_Kupac_Količina" FromRole="Količina" ToRole="Narudžba_Kupac" />
         </EntityType>
         <EntityType Name="Količina_Pića">
           <Key>
@@ -658,6 +677,9 @@
           <Property Name="Račun_Id" Type="Int32" Nullable="false" />
           <Property Name="Piće_Id" Type="Int32" Nullable="false" />
           <Property Name="Količina" Type="Int32" Nullable="false" />
+          <Property Name="Naručeno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Količina_Id" Type="Int32" />
+          <NavigationProperty Name="Količina1" Relationship="Self.FK_Narudžba_Kupac_Količina" FromRole="Narudžba_Kupac" ToRole="Količina" />
           <NavigationProperty Name="Pića" Relationship="Self.FK__Narudžba___Piće___7F2BE32F" FromRole="Narudžba_Kupac" ToRole="Pića" />
           <NavigationProperty Name="Račun" Relationship="Self.FK__Narudžba___Račun__7E37BEF6" FromRole="Narudžba_Kupac" ToRole="Račun" />
         </EntityType>
@@ -846,6 +868,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Narudžba_Kupac_Količina">
+          <End Role="Količina" Type="Self.Količina" Multiplicity="0..1" />
+          <End Role="Narudžba_Kupac" Type="Self.Narudžba_Kupac" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Količina">
+              <PropertyRef Name="Količina_Id" />
+            </Principal>
+            <Dependent Role="Narudžba_Kupac">
+              <PropertyRef Name="Količina_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Količina___Piće___70DDC3D8">
           <End Role="Pića" Type="Self.Pića" Multiplicity="1" />
           <End Role="Količina_Pića" Type="Self.Količina_Pića" Multiplicity="*" />
@@ -1002,7 +1036,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="PI2257_DBEntities3" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ModelPodataka" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Dobavljač" EntityType="Self.Dobavljač" />
           <EntitySet Name="Država" EntityType="Self.Država" />
           <EntitySet Name="Grad" EntityType="Self.Grad" />
@@ -1052,6 +1086,10 @@
           <AssociationSet Name="FK__Količina___Količ__6FE99F9F" Association="Self.FK__Količina___Količ__6FE99F9F">
             <End Role="Količina" EntitySet="Količina" />
             <End Role="Količina_Pića" EntitySet="Količina_Pića" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Narudžba_Kupac_Količina" Association="Self.FK_Narudžba_Kupac_Količina">
+            <End Role="Količina" EntitySet="Količina" />
+            <End Role="Narudžba_Kupac" EntitySet="Narudžba_Kupac" />
           </AssociationSet>
           <AssociationSet Name="FK__Količina___Piće___70DDC3D8" Association="Self.FK__Količina___Piće___70DDC3D8">
             <End Role="Pića" EntitySet="Pića" />
@@ -1111,7 +1149,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="PI2257_DBModelStoreContainer" CdmEntityContainer="PI2257_DBEntities3">
+        <EntityContainerMapping StorageEntityContainer="PI2257_DBModelStoreContainer" CdmEntityContainer="ModelPodataka">
           <EntitySetMapping Name="Dobavljač">
             <EntityTypeMapping TypeName="PI2257_DBModel.Dobavljač">
               <MappingFragment StoreEntitySet="Dobavljač">
@@ -1213,6 +1251,8 @@
                 <ScalarProperty Name="Račun_Id" ColumnName="Račun_Id" />
                 <ScalarProperty Name="Piće_Id" ColumnName="Piće_Id" />
                 <ScalarProperty Name="Količina" ColumnName="Količina" />
+                <ScalarProperty Name="Naručeno" ColumnName="Naručeno" />
+                <ScalarProperty Name="Količina_Id" ColumnName="Količina_Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

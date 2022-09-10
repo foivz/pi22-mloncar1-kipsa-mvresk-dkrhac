@@ -133,6 +133,9 @@
   <data name="PregledPića4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PregledPića4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Dobavljači2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dobavljači2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="vik" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\vik.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -178,9 +181,6 @@
   <data name="PregledPića5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PregledPića5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PregledPića6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PregledPića6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="RasporedRada7" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RasporedRada7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -190,14 +190,14 @@
   <data name="Naruči2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Naruči2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Spol ikona" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Spol ikona.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="RasporedRada4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RasporedRada4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Statistika1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Statistika1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Naruči3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Naruči3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Sakrij Lozinku" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sakrij Lozinku.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,14 +205,11 @@
   <data name="Recenzije1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Recenzije1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ikona1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ikona1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="vik1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\vik1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Spol ikona" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Spol ikona.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PregledPića6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PregledPića6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Naruči9" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Naruči9.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -241,11 +238,17 @@
   <data name="logouticon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logouticon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Dobavljači2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Dobavljači2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ikona1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ikona1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RasporedRada1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RasporedRada1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="E-mail2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\E-mail2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="homepage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\homepage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Sakrij Lozinku ikona" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sakrij Lozinku ikona.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -256,10 +259,10 @@
   <data name="RasporedRada6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RasporedRada6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="RasporedRada1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\RasporedRada1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Naruči3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Naruči3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="homepage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\homepage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Verifikacija" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Verifikacija.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

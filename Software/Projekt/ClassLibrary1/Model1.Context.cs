@@ -13,10 +13,10 @@ namespace ClassLibrary1
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class PI2257_DBEntities3 : DbContext
+    public partial class ModelPodataka : DbContext
     {
-        public PI2257_DBEntities3()
-            : base("name=PI2257_DBEntities3")
+        public ModelPodataka()
+            : base("name=ModelPodataka")
         {
         }
     

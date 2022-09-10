@@ -25,12 +25,15 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
+    <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -53,18 +56,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DodatneKlase\PregledPićaExtd.cs" />
+    <Compile Include="DodatneKlase\NaručiExtd.cs" />
     <Compile Include="Forme\AžurirajPića.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forme\AžurirajPića.Designer.cs">
       <DependentUpon>AžurirajPića.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forme\DodajPića.cs">
+    <Compile Include="Forme\NaručiPića.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forme\DodajPića.Designer.cs">
-      <DependentUpon>DodajPića.cs</DependentUpon>
+    <Compile Include="Forme\NaručiPića.Designer.cs">
+      <DependentUpon>NaručiPića.cs</DependentUpon>
     </Compile>
     <Compile Include="Forme\PočetnaStranica.cs">
       <SubType>Form</SubType>
@@ -84,6 +87,18 @@
     <Compile Include="Forme\Prijava.Designer.cs">
       <DependentUpon>Prijava.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forme\UnosNoveLozinke.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\UnosNoveLozinke.Designer.cs">
+      <DependentUpon>UnosNoveLozinke.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\ZaboravljenaLozinka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\ZaboravljenaLozinka.Designer.cs">
+      <DependentUpon>ZaboravljenaLozinka.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Forme\Registracija.cs">
@@ -95,8 +110,8 @@
     <EmbeddedResource Include="Forme\AžurirajPića.resx">
       <DependentUpon>AžurirajPića.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forme\DodajPića.resx">
-      <DependentUpon>DodajPića.cs</DependentUpon>
+    <EmbeddedResource Include="Forme\NaručiPića.resx">
+      <DependentUpon>NaručiPića.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\PočetnaStranica.resx">
       <DependentUpon>PočetnaStranica.cs</DependentUpon>
@@ -106,6 +121,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\Prijava.resx">
       <DependentUpon>Prijava.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\UnosNoveLozinke.resx">
+      <DependentUpon>UnosNoveLozinke.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\ZaboravljenaLozinka.resx">
+      <DependentUpon>ZaboravljenaLozinka.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -130,6 +151,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="UserHelp\UserHelp.chm" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -283,10 +305,26 @@
       <Project>{9EBB837A-6DF2-44B2-AD0A-4B53EED5BBCC}</Project>
       <Name>DataAccess</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DodavanjePića_dll\DodavanjePića_dll.csproj">
+      <Project>{7e522266-ef9a-45e6-af60-e98effb65997}</Project>
+      <Name>DodavanjePića_dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UserHelp\UserHelp.csproj">
+      <Project>{ab1b0d10-597e-4d29-b0b9-6c79090a15ce}</Project>
+      <Name>UserHelp</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Validacija\Validacija.csproj">
       <Project>{3C890332-9593-4A59-B82A-74CEF7F5EE9E}</Project>
       <Name>Validacija</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Zajedničke dodatne klase\Zajedničke dodatne klase.csproj">
+      <Project>{de61aea3-7b8e-4902-bd96-c8c2df0ff0e9}</Project>
+      <Name>Zajedničke dodatne klase</Name>
+    </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Verifikacija.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

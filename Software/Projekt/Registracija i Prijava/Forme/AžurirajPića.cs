@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UserHelp;
 
 namespace Registracija_i_Prijava.Forme
 {
@@ -18,13 +19,18 @@ namespace Registracija_i_Prijava.Forme
         private Point offset;
         private PregledPićaExtd novi;
         public string nazivPiča;
+        public string email;
+        
         public AžurirajPića()
         {
             InitializeComponent();
+            this.KeyPreview = true;
             comboBoxVrstaPićaPodaci();
             comboBoxDohvatiProizvođaće();
+            
+            
         }
-        public AžurirajPića(PregledPićaExtd pića,string NazivPića) : this()
+        public AžurirajPića(PregledPićaExtd pića,string NazivPića,string Email) : this()
         {
             novi = pića;
             nazivPiča = NazivPića;
@@ -34,12 +40,13 @@ namespace Registracija_i_Prijava.Forme
             textBoxOpis.Text=pića.Opis;
             comboBoxProizvođać.SelectedItem = pića.Naziv_Proizvođaća;
             comboBoxVrstaPića.SelectedItem = pića.Naziv_Vrste;
+            email = Email;
             
 
         }
         private void comboBoxDohvatiProizvođaće()
         {
-            using (var context = new PI2257_DBEntities3())
+            using (var context = new ModelPodataka())
             {
                 var query = from p in context.Proizvođać
                             select p.Naziv_Proizvođaća.ToString();
@@ -51,7 +58,7 @@ namespace Registracija_i_Prijava.Forme
 
         private void comboBoxVrstaPićaPodaci()
         {
-            using (var context = new PI2257_DBEntities3())
+            using (var context = new ModelPodataka())
             {
                 var query = from p in context.Vrsta_pića
                             select p.Naziv_Vrste.ToString();
@@ -81,7 +88,7 @@ namespace Registracija_i_Prijava.Forme
 
         private void buttonOdustani_Click(object sender, EventArgs e)
         {
-            Pregled_pića pregledPića = new Pregled_pića();
+            Pregled_pića pregledPića = new Pregled_pića(email);
             Hide();
             pregledPića.ShowDialog();
             Close();
@@ -89,9 +96,9 @@ namespace Registracija_i_Prijava.Forme
 
         private void buttonSpremi_Click(object sender, EventArgs e)
         {
-            int Proizvođać_Id = 2;
+            int Proizvođać_Id = 1;
             int VrstaPića_Id = 1;
-            int KoličinaPića_Id = 1;
+
 
             string NazivPića = textBoxNaziv.Text;
             string PostotakAlkohola = textBoxPostotakAlkohola.Text;
@@ -102,7 +109,7 @@ namespace Registracija_i_Prijava.Forme
            
 
 
-            using (var context = new PI2257_DBEntities3())
+            using (var context = new ModelPodataka())
             {
                 string Proizvođač = comboBoxProizvođać.SelectedItem.ToString();
 
@@ -123,10 +130,6 @@ namespace Registracija_i_Prijava.Forme
                     }
 
                 }
-
-              
-
-
 
                 var query = from pića in context.Pića
                             join vrstaPića in context.Vrsta_pića on pića.VrstaPića_Id equals vrstaPića.VrstaPića_Id
@@ -156,12 +159,10 @@ namespace Registracija_i_Prijava.Forme
                 }
                 
                 
-                   
-                
                 context.SaveChanges();
             }
             
-            using (var context = new PI2257_DBEntities3())
+            using (var context = new ModelPodataka())
                 {
 
                 
@@ -189,10 +190,40 @@ namespace Registracija_i_Prijava.Forme
                 }
                     context.SaveChanges();
             }
-            Pregled_pića pregledPića = new Pregled_pića();
+            MessageBox.Show("Uspješno ste ažurirali podatke.");
+            Pregled_pića pregledPića = new Pregled_pića(email);
             Hide();
             pregledPića.ShowDialog();
             Close();
+        }
+
+        private void buttonSpremi_MouseHover(object sender, EventArgs e)
+        {
+            buttonSpremi.ForeColor = Color.Blue;
+        }
+
+        private void buttonSpremi_MouseLeave(object sender, EventArgs e)
+        {
+            buttonSpremi.ForeColor= Color.Black;
+        }
+
+        private void buttonOdustani_MouseHover(object sender, EventArgs e)
+        {
+            buttonOdustani.ForeColor= Color.Blue;
+        }
+
+        private void buttonOdustani_MouseLeave(object sender, EventArgs e)
+        {
+            buttonOdustani.ForeColor = Color.Black;
+        }
+
+        private void AžurirajPića_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                UserHelpp help = new UserHelpp();
+                help.OtvoriUserHelp(this, "AžuriranjePića.htm");
+            }
         }
     }
 }

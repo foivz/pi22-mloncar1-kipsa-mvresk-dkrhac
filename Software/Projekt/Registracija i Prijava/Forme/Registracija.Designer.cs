@@ -45,6 +45,7 @@
             this.pictureBoxAdresa = new System.Windows.Forms.PictureBox();
             this.textBoxLozinka = new System.Windows.Forms.TextBox();
             this.pictureBoxLozinka = new System.Windows.Forms.PictureBox();
+            this.textBoxAdresa = new System.Windows.Forms.TextBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -60,7 +61,6 @@
             this.labelRegistracija = new System.Windows.Forms.Label();
             this.pictureBoxIme = new System.Windows.Forms.PictureBox();
             this.pictureBoxLogoVIK = new System.Windows.Forms.PictureBox();
-            this.textBoxAdresa = new System.Windows.Forms.TextBox();
             this.panelDrag.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPonovljenaLozinka)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKorisničkoIme)).BeginInit();
@@ -109,11 +109,11 @@
             this.panelDrag.Controls.Add(this.labelRegistracija);
             this.panelDrag.Controls.Add(this.pictureBoxIme);
             this.panelDrag.Controls.Add(this.pictureBoxLogoVIK);
-            this.panelDrag.Location = new System.Drawing.Point(-3, -5);
+            this.panelDrag.Location = new System.Drawing.Point(-2, -1);
             this.panelDrag.Name = "panelDrag";
-            this.panelDrag.Size = new System.Drawing.Size(580, 1104);
+            this.panelDrag.Size = new System.Drawing.Size(579, 1100);
             this.panelDrag.TabIndex = 0;
-            this.panelDrag.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDrag_Paint);
+//            this.panelDrag.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDrag_Paint);
             this.panelDrag.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelDrag_MouseDown);
             this.panelDrag.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelDrag_MouseMove);
             this.panelDrag.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelDrag_MouseUp);
@@ -294,6 +294,20 @@
             this.pictureBoxLozinka.TabIndex = 77;
             this.pictureBoxLozinka.TabStop = false;
             // 
+            // textBoxAdresa
+            // 
+            this.textBoxAdresa.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxAdresa.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxAdresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxAdresa.Location = new System.Drawing.Point(170, 604);
+            this.textBoxAdresa.Multiline = true;
+            this.textBoxAdresa.Name = "textBoxAdresa";
+            this.textBoxAdresa.Size = new System.Drawing.Size(300, 40);
+            this.textBoxAdresa.TabIndex = 76;
+            this.textBoxAdresa.Text = "Adresa";
+            this.textBoxAdresa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxAdresa.Click += new System.EventHandler(this.textBoxAdresa_Click_1);
+            // 
             // pictureBox7
             // 
             this.pictureBox7.Image = global::Registracija_i_Prijava.Properties.Resources.Adresa_ikona;
@@ -453,19 +467,6 @@
             this.pictureBoxLogoVIK.TabStop = false;
             this.pictureBoxLogoVIK.Click += new System.EventHandler(this.pictureBoxLogoVIK_Click);
             // 
-            // textBoxAdresa
-            // 
-            this.textBoxAdresa.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxAdresa.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxAdresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxAdresa.Location = new System.Drawing.Point(170, 604);
-            this.textBoxAdresa.Multiline = true;
-            this.textBoxAdresa.Name = "textBoxAdresa";
-            this.textBoxAdresa.Size = new System.Drawing.Size(300, 40);
-            this.textBoxAdresa.TabIndex = 76;
-            this.textBoxAdresa.Text = "Adresa";
-            this.textBoxAdresa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // Registracija
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -476,6 +477,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Registracija";
             this.Text = "Registracija";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Registracija_KeyDown);
             this.panelDrag.ResumeLayout(false);
             this.panelDrag.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPonovljenaLozinka)).EndInit();

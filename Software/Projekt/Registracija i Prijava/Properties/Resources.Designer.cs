@@ -523,6 +523,16 @@ namespace Registracija_i_Prijava.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Verifikacija {
+            get {
+                object obj = ResourceManager.GetObject("Verifikacija", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap vik {
             get {
                 object obj = ResourceManager.GetObject("vik", resourceCulture);

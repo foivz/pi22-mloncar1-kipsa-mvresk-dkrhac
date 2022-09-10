@@ -42,6 +42,7 @@
             this.pictureBoxIkonaKorisničkoIme = new System.Windows.Forms.PictureBox();
             this.pictureBoxLogoVIK = new System.Windows.Forms.PictureBox();
             this.pictureBoxSakrijLozinku = new System.Windows.Forms.PictureBox();
+            this.labelZaboravljenaLozinka = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPrikažiLozinku)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIkonaLozinka)).BeginInit();
@@ -92,7 +93,7 @@
             this.buttonPrijaviSe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonPrijaviSe.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonPrijaviSe.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonPrijaviSe.Location = new System.Drawing.Point(113, 451);
+            this.buttonPrijaviSe.Location = new System.Drawing.Point(113, 473);
             this.buttonPrijaviSe.Name = "buttonPrijaviSe";
             this.buttonPrijaviSe.Size = new System.Drawing.Size(300, 64);
             this.buttonPrijaviSe.TabIndex = 9;
@@ -107,7 +108,7 @@
             this.labelRegistrirajSe.AutoSize = true;
             this.labelRegistrirajSe.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelRegistrirajSe.Font = new System.Drawing.Font("Book Antiqua", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRegistrirajSe.Location = new System.Drawing.Point(189, 527);
+            this.labelRegistrirajSe.Location = new System.Drawing.Point(189, 556);
             this.labelRegistrirajSe.Name = "labelRegistrirajSe";
             this.labelRegistrirajSe.Size = new System.Drawing.Size(174, 28);
             this.labelRegistrirajSe.TabIndex = 10;
@@ -121,7 +122,7 @@
             this.labelIzlaz.AutoSize = true;
             this.labelIzlaz.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelIzlaz.Font = new System.Drawing.Font("Book Antiqua", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelIzlaz.Location = new System.Drawing.Point(236, 573);
+            this.labelIzlaz.Location = new System.Drawing.Point(233, 593);
             this.labelIzlaz.Name = "labelIzlaz";
             this.labelIzlaz.Size = new System.Drawing.Size(50, 22);
             this.labelIzlaz.TabIndex = 11;
@@ -212,9 +213,24 @@
             this.pictureBoxSakrijLozinku.TabStop = false;
             this.pictureBoxSakrijLozinku.Click += new System.EventHandler(this.pictureBoxSakrijLozinku_Click);
             // 
+            // labelZaboravljenaLozinka
+            // 
+            this.labelZaboravljenaLozinka.AutoSize = true;
+            this.labelZaboravljenaLozinka.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelZaboravljenaLozinka.Font = new System.Drawing.Font("Book Antiqua", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelZaboravljenaLozinka.Location = new System.Drawing.Point(228, 427);
+            this.labelZaboravljenaLozinka.Name = "labelZaboravljenaLozinka";
+            this.labelZaboravljenaLozinka.Size = new System.Drawing.Size(185, 22);
+            this.labelZaboravljenaLozinka.TabIndex = 19;
+            this.labelZaboravljenaLozinka.Text = "Zaboravljena lozinka?";
+            this.labelZaboravljenaLozinka.Click += new System.EventHandler(this.labelZaboravljenaLozinka_Click);
+            this.labelZaboravljenaLozinka.MouseLeave += new System.EventHandler(this.labelZaboravljenaLozinka_MouseLeave);
+            this.labelZaboravljenaLozinka.MouseHover += new System.EventHandler(this.labelZaboravljenaLozinka_MouseHover);
+            // 
             // Prijava
             // 
-            this.ClientSize = new System.Drawing.Size(519, 604);
+            this.ClientSize = new System.Drawing.Size(516, 624);
+            this.Controls.Add(this.labelZaboravljenaLozinka);
             this.Controls.Add(this.pictureBoxSakrijLozinku);
             this.Controls.Add(this.pictureBoxPrikažiLozinku);
             this.Controls.Add(this.textBoxLozinka);
@@ -229,7 +245,10 @@
             this.Controls.Add(this.pictureBoxIkonaKorisničkoIme);
             this.Controls.Add(this.pictureBoxLogoVIK);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Name = "Prijava";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Prijava_KeyDown);
+//            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Prijava_KeyPress);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPrikažiLozinku)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIkonaLozinka)).EndInit();
@@ -260,6 +279,7 @@
         private System.Windows.Forms.TextBox textBoxLozinka;
         private System.Windows.Forms.PictureBox pictureBoxPrikažiLozinku;
         private System.Windows.Forms.PictureBox pictureBoxSakrijLozinku;
+        private System.Windows.Forms.Label labelZaboravljenaLozinka;
     }
 }
 
