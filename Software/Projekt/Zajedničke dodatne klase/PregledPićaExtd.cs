@@ -13,7 +13,7 @@ namespace Registracija_i_Prijava.DodatneKlase
         public string Količina1 { get; set; }
         public string Postotak_Alkohola { get; set; }
         public string Naziv_Vrste { get; set; }
-       // public int Proizvođać_Id { get; set; }
+      
         public string Naziv_Proizvođaća { get; set; }
         public string Cijena { get; set; }
         public string Opis { get; set; }
