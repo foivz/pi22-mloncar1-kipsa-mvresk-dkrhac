@@ -436,12 +436,9 @@ namespace Registracija_i_Prijava.Forme
         private void buttonDodajuIzvršene_Click(object sender, EventArgs e)
 
         {
-           
-
-               
 
                 NaručiExtd odaberi = dataGridViewNaručiPića.CurrentRow.DataBoundItem as NaručiExtd;
-                MessageBox.Show(odaberi.Datum_Isporuke.ToString());
+             
                 if (odaberi != null && odaberi.Izvršeno == false)
                 {
                     using (var context = new ModelPodataka())

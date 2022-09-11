@@ -134,8 +134,7 @@ namespace Registracija_i_Prijava.Forme
 
                 string Opis = textBoxOpis.Text;
 
-               // foreach (var item in context.Pića)
-               // {
+               
                     var query = from pića in context.Pića
                                 join vrstaPića in context.Vrsta_pića on pića.VrstaPića_Id equals vrstaPića.VrstaPića_Id
                                 join proizvođać in context.Proizvođać on pića.Proizvođać_Id equals proizvođać.Proizvođać_Id
@@ -163,7 +162,7 @@ namespace Registracija_i_Prijava.Forme
                     }
                          
                     
-              //  }
+              
 
                 
 

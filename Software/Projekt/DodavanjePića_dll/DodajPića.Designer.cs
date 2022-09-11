@@ -34,7 +34,6 @@
             this.comboBoxVrstaPića = new System.Windows.Forms.ComboBox();
             this.buttonOdustani = new System.Windows.Forms.Button();
             this.buttonSpremi = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.textBoxCijena = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -43,13 +42,11 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.pictureBoxSlika = new System.Windows.Forms.PictureBox();
             this.textBoxOpis = new System.Windows.Forms.TextBox();
             this.textBoxPostotakAlkohola = new System.Windows.Forms.TextBox();
             this.label1DodavanjePića = new System.Windows.Forms.Label();
             this.textBoxNaziv = new System.Windows.Forms.TextBox();
             this.panelDrag.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSlika)).BeginInit();
             this.SuspendLayout();
             // 
             // panelDrag
@@ -59,7 +56,6 @@
             this.panelDrag.Controls.Add(this.comboBoxVrstaPića);
             this.panelDrag.Controls.Add(this.buttonOdustani);
             this.panelDrag.Controls.Add(this.buttonSpremi);
-            this.panelDrag.Controls.Add(this.button3);
             this.panelDrag.Controls.Add(this.textBoxCijena);
             this.panelDrag.Controls.Add(this.label3);
             this.panelDrag.Controls.Add(this.label6);
@@ -68,7 +64,6 @@
             this.panelDrag.Controls.Add(this.label10);
             this.panelDrag.Controls.Add(this.label11);
             this.panelDrag.Controls.Add(this.label12);
-            this.panelDrag.Controls.Add(this.pictureBoxSlika);
             this.panelDrag.Controls.Add(this.textBoxOpis);
             this.panelDrag.Controls.Add(this.textBoxPostotakAlkohola);
             this.panelDrag.Controls.Add(this.label1DodavanjePića);
@@ -139,15 +134,6 @@
             this.buttonSpremi.Click += new System.EventHandler(this.buttonSpremi_Click);
             this.buttonSpremi.MouseLeave += new System.EventHandler(this.buttonSpremi_MouseLeave);
             this.buttonSpremi.MouseHover += new System.EventHandler(this.buttonSpremi_MouseHover);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(1164, 480);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 63;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
             // 
             // textBoxCijena
             // 
@@ -236,15 +222,6 @@
             this.label12.TabIndex = 55;
             this.label12.Text = "Naziv";
             // 
-            // pictureBoxSlika
-            // 
-            this.pictureBoxSlika.Location = new System.Drawing.Point(1164, 173);
-            this.pictureBoxSlika.Name = "pictureBoxSlika";
-            this.pictureBoxSlika.Size = new System.Drawing.Size(345, 290);
-            this.pictureBoxSlika.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxSlika.TabIndex = 54;
-            this.pictureBoxSlika.TabStop = false;
-            // 
             // textBoxOpis
             // 
             this.textBoxOpis.AllowDrop = true;
@@ -299,7 +276,6 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DodajPića_KeyDown);
             this.panelDrag.ResumeLayout(false);
             this.panelDrag.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSlika)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -313,7 +289,6 @@
         private System.Windows.Forms.ComboBox comboBoxProizvođać;
         private System.Windows.Forms.ComboBox comboBoxKoličina;
         private System.Windows.Forms.ComboBox comboBoxVrstaPića;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBoxCijena;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
@@ -322,7 +297,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.PictureBox pictureBoxSlika;
         private System.Windows.Forms.TextBox textBoxPostotakAlkohola;
         private System.Windows.Forms.Label label1DodavanjePića;
         private System.Windows.Forms.TextBox textBoxNaziv;
